@@ -7,7 +7,7 @@ public interface SparkLogsHandler {
      *
      * @return String: the physical plan for the latest application.
      **/
-    String getLatestAppPhyicalPlan();
+    String getLatestAppPhysicalPlan();
 
     /**
      * This functions extracts the optimized logical plan for the latest

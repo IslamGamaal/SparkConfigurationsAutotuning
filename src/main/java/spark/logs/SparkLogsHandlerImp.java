@@ -1,7 +1,7 @@
 package spark.logs;
 
 public class SparkLogsHandlerImp implements SparkLogsHandler {
-    public String getLatestAppPhyicalPlan() {
+    public String getLatestAppPhysicalPlan() {
         return null;
     }
 
