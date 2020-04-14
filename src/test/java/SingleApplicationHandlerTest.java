@@ -16,31 +16,29 @@ import static org.mockito.Mockito.*;
 
 public class SingleApplicationHandlerTest {
 
-    SingleApplicationHandler singleApplicationHandler;
     FeaturesExtractionHandler featuresExtractionHandler;
     Classifier classifier;
     List<String> configurations;
 
     @Before
     public void before() {
-        singleApplicationHandler = mock(SingleApplicationHandlerImpl.class);
         featuresExtractionHandler = mock(FeaturesExtractionHandlerImp.class);
         classifier = mock(ClassifierImp.class);
 
-        when(featuresExtractionHandler.extract("path/to/jar/application"))
+        when(featuresExtractionHandler.extract("some/path/to/jar/application"))
                 .thenReturn(new ArrayList<Double>(Arrays.asList(1.0, 2.0, 3.0)));
 
-        when(classifier.classify(featuresExtractionHandler.extract("path/to/jar/application")))
+        when(classifier.classify(featuresExtractionHandler.extract("some/path/to/jar/application")))
                 .thenReturn(new ArrayList<String>(Arrays.asList("5 MB", "2", "3 GB")));
 
-        configurations = classifier.classify(featuresExtractionHandler.extract("path/to/jar/application"));
     }
 
 
     @Test
     public void PredictSuitableConfigurationsTest() {
-        String pathToJar = "some/path/to/application";
-
+        String pathToJar = "some/path/to/jar/application";
+        SingleApplicationHandler singleApplicationHandler = mock(SingleApplicationHandlerImpl.class);
+        configurations = classifier.classify(featuresExtractionHandler.extract(pathToJar));
         when(singleApplicationHandler.predictSuitableConfigurations(pathToJar))
                 .thenReturn(configurations);
 
