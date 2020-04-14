@@ -12,3 +12,7 @@ public interface FeaturesExtractionHandler {
      **/
     List<Double> extract(String pathToApplicationJar);
 }
+
+/*
+    Create application class containing -> jar , dataset, ...
+ */

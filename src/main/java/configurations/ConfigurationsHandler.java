@@ -8,6 +8,6 @@ public interface ConfigurationsHandler {
     /**
      * @return List<String> : Containing best configurations.
      */
-    List<String> applyApplication();
+    List<List<String>> applyApplication();
 
 }

@@ -41,6 +41,7 @@ public class InitializationHandlerTest {
     public void InstantiationTriggerTest() {
         String pathToFolderContainingJars = "some/path/to/folder";
         HashMap<List, List> model = new HashMap();
+        //todo fix this thing 3ashan 3amelha ay 7aga mo2akatan,,
         success = classifier.trainModel(bestConfigurationPicker.pickBestConfigurationsForApplication(configurationsHandler.applyApplication()));
         when(initializationHandler.instantiationTrigger(pathToFolderContainingJars))
                 .thenReturn(success);

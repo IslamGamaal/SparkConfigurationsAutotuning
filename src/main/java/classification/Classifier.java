@@ -11,4 +11,7 @@ public interface Classifier {
      * @return List: containing the predicted configurations converted to String
      **/
     List<String> classify(List<Double> applicationFeatures);
+
+    //boolean trainModel(List<Double> inputFeatures, List<String> outputConfigurations);
+    boolean trainModel(List<String> dataset);
 }
