@@ -9,6 +9,7 @@ import featuresextraction.FeaturesExtractionHandlerImp;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import spark.utilites.SparkApplication;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,7 +20,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class SystemTrainerTest {
-    SystemTrainer initializationHandler;
+    SystemTrainer systemTrainer;
     FeaturesExtractionHandler featuresExtractionHandler;
     Classifier classifier;
     ConfigurationsHandler configurationsHandler;
@@ -29,7 +30,7 @@ public class SystemTrainerTest {
 
     @Before
     public void before() {
-        initializationHandler = mock(InitializationHandlerImpl.class);
+        systemTrainer = mock(SystemTrainerImpl.class);
         featuresExtractionHandler = mock(FeaturesExtractionHandlerImp.class);
         configurationsHandler = mock(ConfigurationsHandlerImp.class);
         bestConfigurationPicker = mock(BestConfigurationsPickerImp.class);
@@ -39,13 +40,12 @@ public class SystemTrainerTest {
 
     @Test
     public void InstantiationTriggerTest() {
-        String pathToFolderContainingJars = "some/path/to/folder";
         HashMap<List, List> model = new HashMap();
         //todo fix this thing 3ashan 3amelha ay 7aga mo2akatan,,
-        success = classifier.trainModel(bestConfigurationPicker.pickBestConfigurationsForApplication(configurationsHandler.applyApplication()));
-        when(initializationHandler.instantiationTrigger(pathToFolderContainingJars))
+        success = classifier.trainModel(bestConfigurationPicker.pickBestConfigurationsForApplication(configurationsHandler.applyApplication(new SparkApplication()) , new SparkApplication()));
+        when(systemTrainer.instantiationTrigger(new ArrayList<SparkApplication>()))
                 .thenReturn(success);
 
-        Assert.assertEquals(true, initializationHandler.instantiationTrigger(pathToFolderContainingJars));
+        Assert.assertEquals(true, systemTrainer.instantiationTrigger(new ArrayList<SparkApplication>()));
     }
 }
