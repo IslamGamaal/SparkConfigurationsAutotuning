@@ -1,5 +1,7 @@
 package featuresextraction;
 
+import spark.utilites.SparkApplication;
+
 import java.util.List;
 
 public interface FeaturesExtractionHandler {
@@ -7,10 +9,10 @@ public interface FeaturesExtractionHandler {
      * This function extracts all possible static and dynamic features from a
      * given application
      *
-     * @param pathToApplicationJar String: the absolute path to the wanted application jar.
+     * @param sparkApplication SparkApplication: Spark Application.
      * @return List: containing all features extracted
      **/
-    List<Double> extract(String pathToApplicationJar);
+    List<Feature> extract(SparkApplication sparkApplication);
 }
 
 /*

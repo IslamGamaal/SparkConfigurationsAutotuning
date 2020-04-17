@@ -1,5 +1,7 @@
+import spark.utilites.SparkApplication;
+
 import java.util.List;
 
 public interface SingleApplicationHandler {
-    List<String> predictSuitableConfigurations(String pathToJar);
+    List<String> predictSuitableConfigurations(SparkApplication sparkApplication);
 }

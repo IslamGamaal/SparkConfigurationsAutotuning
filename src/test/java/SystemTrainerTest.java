@@ -18,8 +18,8 @@ import java.util.List;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-public class InitializationHandlerTest {
-    InitializationHandler initializationHandler;
+public class SystemTrainerTest {
+    SystemTrainer initializationHandler;
     FeaturesExtractionHandler featuresExtractionHandler;
     Classifier classifier;
     ConfigurationsHandler configurationsHandler;
