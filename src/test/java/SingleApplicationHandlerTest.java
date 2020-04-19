@@ -1,12 +1,16 @@
 import classification.Classifier;
 import classification.ClassifierImp;
+import configurations.utilites.Configuration;
+import featuresextraction.Feature;
 import featuresextraction.FeaturesExtractionHandler;
 import featuresextraction.FeaturesExtractionHandlerImp;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.ArgumentMatchers;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import spark.utilites.SparkApplication;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,33 +19,37 @@ import java.util.List;
 import static org.mockito.Mockito.*;
 
 public class SingleApplicationHandlerTest {
-
+    SingleApplicationHandler singleApplicationHandler;
     FeaturesExtractionHandler featuresExtractionHandler;
     Classifier classifier;
-    List<String> configurations;
 
     @Before
     public void before() {
+        singleApplicationHandler = mock(SingleApplicationHandlerImpl.class);
         featuresExtractionHandler = mock(FeaturesExtractionHandlerImp.class);
         classifier = mock(ClassifierImp.class);
 
-        when(featuresExtractionHandler.extract("some/path/to/jar/application"))
-                .thenReturn(new ArrayList<Double>(Arrays.asList(1.0, 2.0, 3.0)));
+        when(featuresExtractionHandler.extract(any(SparkApplication.class))).thenReturn(new ArrayList<Feature>());
 
-        when(classifier.classify(featuresExtractionHandler.extract("some/path/to/jar/application")))
-                .thenReturn(new ArrayList<String>(Arrays.asList("5 MB", "2", "3 GB")));
+        when(classifier.classify(ArgumentMatchers.<Feature>anyList()))
+                .thenReturn(new ArrayList<Configuration>());
+
+        SparkApplication sparkApplication = new SparkApplication();
+        List<Configuration> configurations = simulatePrediction(sparkApplication);
+
+        when(singleApplicationHandler.predictSuitableConfigurations(any(SparkApplication.class)))
+                .thenReturn(configurations);
 
     }
 
 
     @Test
     public void PredictSuitableConfigurationsTest() {
-        String pathToJar = "some/path/to/jar/application";
-        SingleApplicationHandler singleApplicationHandler = mock(SingleApplicationHandlerImpl.class);
-        configurations = classifier.classify(featuresExtractionHandler.extract(pathToJar));
-        when(singleApplicationHandler.predictSuitableConfigurations(pathToJar))
-                .thenReturn(configurations);
 
-        Assert.assertEquals(Arrays.asList("5 MB", "2", "3 GB"), singleApplicationHandler.predictSuitableConfigurations(pathToJar));
+        Assert.assertEquals(new ArrayList<Configuration>(), singleApplicationHandler.predictSuitableConfigurations(new SparkApplication()));
+    }
+
+    private List<Configuration> simulatePrediction(SparkApplication sparkApplication){
+        return classifier.classify(featuresExtractionHandler.extract(sparkApplication));
     }
 }

@@ -1,11 +1,16 @@
 package classification;
 
+import configurations.utilites.Configuration;
+import featuresextraction.Feature;
+
 import java.util.List;
 
 public class ClassifierImp implements Classifier {
-    public List<String> classify(List<Double> applicationFeatures) {
+    public List<Configuration> classify(List<Feature> applicationFeatures) {
         return null;
     }
-    //public boolean trainModel(List<Double> inputFeatures, List<String> outputConfigurations) { return false; }
-    public boolean trainModel(List<String> dataset) { return false; }
+
+    public boolean trainModel(List<List<Feature>> features, List<List<Configuration>> configurations) {
+        return false;
+    }
 }

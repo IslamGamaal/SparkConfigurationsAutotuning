@@ -2,7 +2,7 @@ package configurations.samples;
 
 import java.util.List;
 
-public interface ConfigurationSampler {
+public interface ConfigurationsSampler {
 
     /**
      * This function generate the configurations samples values.

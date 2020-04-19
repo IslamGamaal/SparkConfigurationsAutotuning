@@ -1,13 +1,16 @@
 package configurations;
 
+import configurations.utilites.Configuration;
+import spark.utilites.SparkApplication;
+
 import java.util.List;
 
 public interface ConfigurationsHandler {
 
 
-    /**
-     * @return List<String> : Containing best configurations.
+    /** @param sparkApplication : Containing the application to be applied
+     * @return List<Configuration> : Containing best configurations.
      */
-    List<List<String>> applyApplication();
+    List<Configuration> applyApplication(SparkApplication sparkApplication);
 
 }

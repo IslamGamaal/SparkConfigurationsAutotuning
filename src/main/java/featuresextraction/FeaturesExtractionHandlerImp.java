@@ -1,10 +1,13 @@
 package featuresextraction;
 
-import java.util.ArrayList;
+import spark.utilites.SparkApplication;
+
 import java.util.List;
 
+
 public class FeaturesExtractionHandlerImp implements FeaturesExtractionHandler {
-    public List<Double> extract(String pathToApplicationJar) {
-        return new ArrayList<Double>();
+
+    public List<Feature> extract(SparkApplication sparkApplication) {
+        return null;
     }
 }

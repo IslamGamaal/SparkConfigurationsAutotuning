@@ -2,7 +2,7 @@ package configurations.samples;
 
 import java.util.List;
 
-public interface ConfigurationFilesHandler {
+public interface ConfigurationsFilesHandler {
 
     /**
      * This functions writes the configurations samples in files .conf
