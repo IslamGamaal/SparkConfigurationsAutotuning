@@ -1,5 +1,7 @@
 package configurations.samples;
 
+import configurations.utilites.Configuration;
+
 import java.util.List;
 
 public interface ConfigurationsSampler {
@@ -9,9 +11,9 @@ public interface ConfigurationsSampler {
      * @param samplesNum int: containing samples number needed to be generated.
      * @param upperBounds List : containing the upper bounds of the configurations.
      * @param lowerBounds List : containing the lower bounds of the configurations.
-     * @return List<List<Float>>: containing lists of configurations samples.
+     * @return List<List<Configuration>>: containing lists of configurations samples.
      **/
 
-    List<List<Float>> generateSamples(int samplesNum , List<Float> upperBounds , List<Float> lowerBounds);
+    List<List<Configuration>> generateSamples(int samplesNum , List<Float> upperBounds , List<Float> lowerBounds);
 
 }
