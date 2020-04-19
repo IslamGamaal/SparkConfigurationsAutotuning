@@ -11,11 +11,13 @@ public interface SparkHandler {
      * @param configuration List<String> : Configurations to be used in submitting application.
      * @return SparkApplication : Containing the submitted application info.
      */
-    SparkApplication HandleApplication(List<String> configuration);
+    SparkApplication HandleApplication(List<String> configuration , SparkApplication sparkApplication);
 
     /**
      *
      * @return SparkApplication : Containing the submitted application info.
      */
-    SparkApplication HandleApplication();
+    SparkApplication HandleApplication(SparkApplication sparkApplication);
+
+
 }
