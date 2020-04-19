@@ -8,6 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.ArgumentMatchers;
 import spark.SparkHandler;
+import spark.SparkHandlerImp;
 import spark.utilites.SparkApplication;
 
 import java.util.ArrayList;
@@ -30,7 +31,7 @@ public class FeaturesExtractionHandlerTest {
         featuresExtractionHandler = mock(FeaturesExtractionHandlerImp.class);
         staticFeaturesExtractor = mock(StaticFeaturesExtractorImp.class);
         dynamicFeaturesExtractor = mock(DynamicFeaturesExtractorImp.class);
-        sparkHandler = mock(SparkHandler.class);
+        sparkHandler = mock(SparkHandlerImp.class);
 
         when(staticFeaturesExtractor.extract(anyString(), anyString())).thenReturn(new ArrayList<Feature>());
         when(dynamicFeaturesExtractor.extract(anyString())).thenReturn(new ArrayList<Feature>());
