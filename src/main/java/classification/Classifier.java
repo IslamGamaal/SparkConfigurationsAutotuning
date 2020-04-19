@@ -1,5 +1,6 @@
 package classification;
 
+import configurations.utilites.Configuration;
 import featuresextraction.Feature;
 
 import java.util.List;
@@ -12,8 +13,8 @@ public interface Classifier {
      * @param applicationFeatures List: extracted by FeaturesExtraction module.
      * @return List: containing the predicted configurations converted to String
      **/
-    List<String> classify(List<Feature> applicationFeatures);
+    List<Configuration> classify(List<Feature> applicationFeatures);
 
     //boolean trainModel(List<Double> inputFeatures, List<String> outputConfigurations);
-    boolean trainModel(List<String> dataset);
+    boolean trainModel(List<List<Feature>> features , List<List<Configuration>> configurations);
 }
