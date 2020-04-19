@@ -8,24 +8,21 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.ArgumentMatchers;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import spark.utilites.SparkApplication;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static org.mockito.Mockito.*;
 
-public class SingleApplicationHandlerTest {
-    SingleApplicationHandler singleApplicationHandler;
+public class BestConfigurationsPredictorTest {
+    BestConfigurationsPredictor bestConfigurationPredictor;
     FeaturesExtractionHandler featuresExtractionHandler;
     Classifier classifier;
 
     @Before
     public void before() {
-        singleApplicationHandler = mock(SingleApplicationHandlerImpl.class);
+        bestConfigurationPredictor = mock(BestConfigurationsPredictorImpl.class);
         featuresExtractionHandler = mock(FeaturesExtractionHandlerImp.class);
         classifier = mock(ClassifierImp.class);
 
@@ -37,7 +34,7 @@ public class SingleApplicationHandlerTest {
         SparkApplication sparkApplication = new SparkApplication();
         List<Configuration> configurations = simulatePrediction(sparkApplication);
 
-        when(singleApplicationHandler.predictSuitableConfigurations(any(SparkApplication.class)))
+        when(bestConfigurationPredictor.predictBestConfigurations(any(SparkApplication.class)))
                 .thenReturn(configurations);
 
     }
@@ -46,7 +43,7 @@ public class SingleApplicationHandlerTest {
     @Test
     public void PredictSuitableConfigurationsTest() {
 
-        Assert.assertEquals(new ArrayList<Configuration>(), singleApplicationHandler.predictSuitableConfigurations(new SparkApplication()));
+        Assert.assertEquals(new ArrayList<Configuration>(), bestConfigurationPredictor.predictBestConfigurations(new SparkApplication()));
     }
 
     private List<Configuration> simulatePrediction(SparkApplication sparkApplication){
