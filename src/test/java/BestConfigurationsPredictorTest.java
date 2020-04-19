@@ -27,9 +27,7 @@ public class BestConfigurationsPredictorTest {
         classifier = mock(ClassifierImp.class);
 
         when(featuresExtractionHandler.extract(any(SparkApplication.class))).thenReturn(new ArrayList<Feature>());
-
-        when(classifier.classify(ArgumentMatchers.<Feature>anyList()))
-                .thenReturn(new ArrayList<Configuration>());
+        when(classifier.classify(ArgumentMatchers.<Feature>anyList())).thenReturn(new ArrayList<Configuration>());
 
         SparkApplication sparkApplication = new SparkApplication();
         List<Configuration> configurations = simulatePrediction(sparkApplication);

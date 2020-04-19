@@ -42,7 +42,9 @@ public class SystemTrainerTest {
         when(featuresExtractionHandler.extract(any(SparkApplication.class))).thenReturn(new ArrayList<Feature>());
         when(configurationsHandler.applyApplication(any(SparkApplication.class))).thenReturn(new ArrayList<Configuration>());
         when(classifier.trainModel(ArgumentMatchers.<List<Feature>>anyList() , ArgumentMatchers.<List<Configuration>>anyList())).thenReturn(true);
+
         boolean simulationResult = simulateSystemTraining(startUpApplication);
+
         when(systemTrainer.trainSystem(ArgumentMatchers.<SparkApplication>anyList())).thenReturn(simulationResult);
 
     }
