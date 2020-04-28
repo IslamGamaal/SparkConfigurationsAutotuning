@@ -5,6 +5,16 @@ public class SparkApplication {
     private String physicalPlan = "";
     private String stagesJson = "";
 
+    public long getLastRunTime() {
+        return lastRunTime;
+    }
+
+    public void setLastRunTime(long lastRunTime) {
+        this.lastRunTime = lastRunTime;
+    }
+
+    private long lastRunTime;
+
     public String getOptimizedQueryPlan() {
         return optimizedQueryPlan;
     }

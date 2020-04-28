@@ -14,7 +14,7 @@ public class utils {
      * @param newValues
      * @return
      */
-    public List<Configuration> getConfigurationsList(List<Configuration> configs, List<Float> newValues) {
+    public static List<Configuration> getConfigurationsList(List<Configuration> configs, List<Float> newValues) {
 
         if(configs.size() != newValues.size()) {
             throw new RuntimeException("configuration and new values lists not in the same size");
