@@ -1,5 +1,6 @@
 package featuresextraction;
 
+import featuresextraction.utilities.Feature;
 import spark.utilites.SparkApplication;
 
 import java.util.List;

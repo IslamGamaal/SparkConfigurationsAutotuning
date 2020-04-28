@@ -1,4 +1,6 @@
-package featuresextraction;
+package featuresextraction.dynamicfeatures;
+
+import featuresextraction.utilities.Feature;
 
 import java.util.List;
 

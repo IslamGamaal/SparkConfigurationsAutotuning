@@ -1,7 +1,7 @@
 package classification;
 
 import configurations.utilites.Configuration;
-import featuresextraction.Feature;
+import featuresextraction.utilities.Feature;
 
 import java.util.List;
 

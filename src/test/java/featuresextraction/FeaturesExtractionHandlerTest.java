@@ -1,12 +1,13 @@
 package featuresextraction;
 
-import classification.Classifier;
-import classification.ClassifierImp;
-import configurations.utilites.Configuration;
+import featuresextraction.dynamicfeatures.DynamicFeaturesExtractor;
+import featuresextraction.dynamicfeatures.DynamicFeaturesExtractorImp;
+import featuresextraction.staticfeatures.StaticFeaturesExtractor;
+import featuresextraction.staticfeatures.StaticFeaturesExtractorImp;
+import featuresextraction.utilities.Feature;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.ArgumentMatchers;
 import spark.SparkHandler;
 import spark.SparkHandlerImp;
 import spark.utilites.SparkApplication;

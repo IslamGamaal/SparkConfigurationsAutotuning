@@ -1,7 +1,7 @@
 import classification.Classifier;
 import classification.ClassifierImp;
 import configurations.utilites.Configuration;
-import featuresextraction.Feature;
+import featuresextraction.utilities.Feature;
 import featuresextraction.FeaturesExtractionHandler;
 import featuresextraction.FeaturesExtractionHandlerImp;
 import org.junit.Assert;
