@@ -12,8 +12,12 @@ import spark.SparkHandler;
 import spark.SparkHandlerImp;
 import spark.utilites.SparkApplication;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
@@ -28,7 +32,7 @@ public class FeaturesExtractionHandlerTest {
 
 
     @Before
-    public void before() {
+    public void before() throws IOException {
         featuresExtractionHandler = mock(FeaturesExtractionHandlerImp.class);
         staticFeaturesExtractor = mock(StaticFeaturesExtractorImp.class);
         dynamicFeaturesExtractor = mock(DynamicFeaturesExtractorImp.class);
@@ -48,7 +52,26 @@ public class FeaturesExtractionHandlerTest {
         Assert.assertEquals(new ArrayList<Feature>(), actual);
     }
 
-    private List<Feature> simulateExtractFeatures(SparkApplication sparkApplication) {
+    @Test
+    public void extractStatic() {
+        StaticFeaturesExtractor featuresExtractionHandler = new StaticFeaturesExtractorImp();
+
+        StringBuilder logicalPlan = new StringBuilder();
+        try {
+            File myObj = new File("/media/kamal/New/plans/logical.txt");
+            Scanner myReader = new Scanner(myObj);
+            while (myReader.hasNextLine()) {
+                logicalPlan.append(myReader.nextLine());
+                logicalPlan.append("\n");
+            }
+            myReader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+        featuresExtractionHandler.extract("", logicalPlan.toString());
+    }
+    private List<Feature> simulateExtractFeatures(SparkApplication sparkApplication) throws IOException {
         SparkApplication outputApplication = sparkHandler.HandleApplication(sparkApplication);
         String optimizedQueryPlan = outputApplication.getOptimizedQueryPlan();
         String physicalPlan = outputApplication.getPhysicalPlan();

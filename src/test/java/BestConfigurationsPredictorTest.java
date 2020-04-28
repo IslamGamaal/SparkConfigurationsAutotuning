@@ -10,6 +10,7 @@ import org.junit.Test;
 import org.mockito.ArgumentMatchers;
 import spark.utilites.SparkApplication;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class BestConfigurationsPredictorTest {
     Classifier classifier;
 
     @Before
-    public void before() {
+    public void before() throws IOException {
         bestConfigurationPredictor = mock(BestConfigurationsPredictorImpl.class);
         featuresExtractionHandler = mock(FeaturesExtractionHandlerImp.class);
         classifier = mock(ClassifierImp.class);
@@ -44,7 +45,7 @@ public class BestConfigurationsPredictorTest {
         Assert.assertEquals(new ArrayList<Configuration>(), bestConfigurationPredictor.predictBestConfigurations(new SparkApplication()));
     }
 
-    private List<Configuration> simulatePrediction(SparkApplication sparkApplication){
+    private List<Configuration> simulatePrediction(SparkApplication sparkApplication) throws IOException {
         return classifier.classify(featuresExtractionHandler.extract(sparkApplication));
     }
 }

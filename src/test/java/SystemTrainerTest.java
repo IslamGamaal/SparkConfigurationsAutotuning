@@ -11,6 +11,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.ArgumentMatchers;
 import spark.utilites.SparkApplication;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import static org.mockito.ArgumentMatchers.any;
@@ -28,7 +30,7 @@ public class SystemTrainerTest {
     Boolean success;
 
     @Before
-    public void before() {
+    public void before() throws IOException {
         sparkApplication = new SparkApplication();
         startUpApplication = new ArrayList<SparkApplication>();
         for (int i = 0; i < 5; i++) {
@@ -55,7 +57,7 @@ public class SystemTrainerTest {
         Assert.assertTrue(systemTrainer.trainSystem(startUpApplication));
     }
 
-    private boolean simulateSystemTraining(List<SparkApplication> startUpApplication){
+    private boolean simulateSystemTraining(List<SparkApplication> startUpApplication) throws IOException {
         List<List<Feature>> features = new ArrayList<List<Feature>>();
         List<List<Configuration>> configurations = new ArrayList<List<Configuration>>();
         for (int i = 0; i < startUpApplication.size() ; i++) {
