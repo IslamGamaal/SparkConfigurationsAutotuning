@@ -5,6 +5,14 @@ public class SparkRunInfo {
     private String sparkMaster;
     private String configsFilePath;
 
+    public SparkRunInfo(){
+        setParamsWithDefaults();
+    }
+
+    private void setParamsWithDefaults() {
+
+    }
+
     public String getSparkDirectory() {
         return sparkDirectory;
     }
