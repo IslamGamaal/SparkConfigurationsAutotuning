@@ -7,6 +7,7 @@ import configurations.samples.ConfigurationsFilesHandlerImp;
 import configurations.samples.ConfigurationsSampler;
 import configurations.samples.ConfigurationsSamplerImp;
 import configurations.utilites.Configuration;
+import configurations.utilites.utils;
 import spark.utilites.SparkApplication;
 
 import java.util.ArrayList;
@@ -25,7 +26,14 @@ public class ConfigurationsHandlerImp implements ConfigurationsHandler {
     }
 
     public List<Configuration> applyApplication(SparkApplication sparkApplication , Map<String, Object> parameters) {
-        configurationsSampler.generateSamples((Integer) parameters.getOrDefault("samplesNum" , 200), new ArrayList<>() , new ArrayList<>());
-        return null;
+        List<List<Float>> configurationsSamples = configurationsSampler.generateSamples((Integer) parameters.getOrDefault("samplesNum" , 200), new ArrayList<>() , new ArrayList<>());
+        List<List<Configuration>> configurations = new ArrayList<>();
+        for (List<Float> configurationsSample : configurationsSamples) {
+            List<Configuration> configurationsList = utils.getConfigurationsList(configurationsSample);
+            if (configurationsList.size()!=0)
+                configurations.add(configurationsList);
+        }
+        List<Configuration> bestConfigurations = bestConfigurationPicker.pickBestConfigurationsForApplication(configurations , sparkApplication);
+        return bestConfigurations;
     }
 }

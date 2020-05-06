@@ -42,7 +42,7 @@ public class SystemTrainerTest {
         classifier = mock(ClassifierImp.class);
 
         when(featuresExtractionHandler.extract(any(SparkApplication.class))).thenReturn(new ArrayList<Feature>());
-        when(configurationsHandler.applyApplication(any(SparkApplication.class))).thenReturn(new ArrayList<Configuration>());
+        //when(configurationsHandler.applyApplication(any(SparkApplication.class))).thenReturn(new ArrayList<Configuration>());
         when(classifier.trainModel(ArgumentMatchers.<List<Feature>>anyList() , ArgumentMatchers.<List<Configuration>>anyList())).thenReturn(true);
 
         boolean simulationResult = simulateSystemTraining(startUpApplication);
@@ -63,8 +63,8 @@ public class SystemTrainerTest {
         for (int i = 0; i < startUpApplication.size() ; i++) {
             List<Feature> singleApplicationFeatures = featuresExtractionHandler.extract(startUpApplication.get(i));
             features.add(singleApplicationFeatures);
-            List<Configuration> singleApplicationConfiguration = configurationsHandler.applyApplication(startUpApplication.get(i));
-            configurations.add(singleApplicationConfiguration);
+            //List<Configuration> singleApplicationConfiguration = configurationsHandler.applyApplication(startUpApplication.get(i));
+            //configurations.add(singleApplicationConfiguration);
         }
         return classifier.trainModel(features , configurations);
     }

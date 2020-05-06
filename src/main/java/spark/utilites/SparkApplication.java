@@ -4,6 +4,50 @@ public class SparkApplication {
     private String optimizedQueryPlan = "";
     private String physicalPlan = "";
     private String stagesJson = "";
+    private long lastRunTime;
+    private String name;
+    private String JarPathWithParamsCommand;
+    private String mainClassName;
+
+    public String getOptimizedQueryPlan() {
+        return optimizedQueryPlan;
+    }
+
+    public void setOptimizedQueryPlan(String optimizedQueryPlan) {
+        this.optimizedQueryPlan = optimizedQueryPlan;
+    }
+
+    public String getPhysicalPlan() {
+        return physicalPlan;
+    }
+
+    public void setPhysicalPlan(String physicalPlan) {
+        this.physicalPlan = physicalPlan;
+    }
+
+    public String getStagesJson() {
+        return stagesJson;
+    }
+
+    public void setStagesJson(String stagesJson) {
+        this.stagesJson = stagesJson;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getJarPathWithParamsCommand() {
+        return JarPathWithParamsCommand;
+    }
+
+    public void setJarPathWithParamsCommand(String jarPathWithParamsCommand) {
+        JarPathWithParamsCommand = jarPathWithParamsCommand;
+    }
 
     public long getLastRunTime() {
         return lastRunTime;
@@ -13,17 +57,11 @@ public class SparkApplication {
         this.lastRunTime = lastRunTime;
     }
 
-    private long lastRunTime;
-
-    public String getOptimizedQueryPlan() {
-        return optimizedQueryPlan;
+    public String getMainClassName() {
+        return mainClassName;
     }
 
-    public String getPhysicalPlan() {
-        return physicalPlan;
-    }
-
-    public String getStagesJson() {
-        return stagesJson;
+    public void setMainClassName(String mainClassName) {
+        this.mainClassName = mainClassName;
     }
 }
