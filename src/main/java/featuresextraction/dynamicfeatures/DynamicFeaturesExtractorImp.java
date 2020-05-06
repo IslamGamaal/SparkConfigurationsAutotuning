@@ -30,7 +30,7 @@ public class DynamicFeaturesExtractorImp implements DynamicFeaturesExtractor {
         int rddsAffectedCount = 0;
         double cpuTimeRatio;
         double memorySpillingRatio;
-        double diskSplillingRatio;
+        double diskSpillingRatio;
 
         for(int i = 0; i < stages.length(); i++) {
             JSONObject currentStage = stages.getJSONObject(i);
@@ -53,7 +53,7 @@ public class DynamicFeaturesExtractorImp implements DynamicFeaturesExtractor {
         cpuTimeRatio = executorCPUTime / executorRunTime;
         if (memoryBytesSpilled + diskBytesSpilled == 0) memorySpillingRatio = 0;
         else memorySpillingRatio = memoryBytesSpilled / (memoryBytesSpilled + diskBytesSpilled);
-        diskSplillingRatio = 1 - memorySpillingRatio;
+        diskSpillingRatio = 1 - memorySpillingRatio;
 
         dynamicFeatures.add(new Feature(SupportedFeatures.NUM_OF_STAGES, stages.length()));
         dynamicFeatures.add(new Feature(SupportedFeatures.EXECUTOR_RUN_TIME, executorRunTime));
@@ -71,7 +71,7 @@ public class DynamicFeaturesExtractorImp implements DynamicFeaturesExtractor {
         dynamicFeatures.add(new Feature(SupportedFeatures.RDDS_AFFECTED_COUNT, rddsAffectedCount));
         dynamicFeatures.add(new Feature(SupportedFeatures.CPU_TIME_RATIO, cpuTimeRatio));
         dynamicFeatures.add(new Feature(SupportedFeatures.MEMORY_SPILLING_RATIO, memorySpillingRatio));
-        dynamicFeatures.add(new Feature(SupportedFeatures.DISK_SPILLING_RATIO, diskSplillingRatio));
+        dynamicFeatures.add(new Feature(SupportedFeatures.DISK_SPILLING_RATIO, diskSpillingRatio));
 
         return dynamicFeatures;
     }
