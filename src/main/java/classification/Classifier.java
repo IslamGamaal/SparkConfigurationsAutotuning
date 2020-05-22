@@ -1,5 +1,6 @@
 package classification;
 
+import classification.utils.DataSetPair;
 import configurations.utilites.Configuration;
 import featuresextraction.utilities.Feature;
 
@@ -16,5 +17,5 @@ public interface Classifier {
     List<Configuration> classify(List<Feature> applicationFeatures);
 
     //boolean trainModel(List<Double> inputFeatures, List<String> outputConfigurations);
-    boolean trainModel(List<List<Feature>> features , List<List<Configuration>> configurations);
+    boolean trainModel(List<DataSetPair> dataSetPairs);
 }

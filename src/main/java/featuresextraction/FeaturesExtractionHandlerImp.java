@@ -1,5 +1,6 @@
 package featuresextraction;
 
+import configurations.utilites.Configuration;
 import featuresextraction.dynamicfeatures.DynamicFeaturesExtractor;
 import featuresextraction.dynamicfeatures.DynamicFeaturesExtractorImp;
 import featuresextraction.staticfeatures.StaticFeaturesExtractor;
@@ -20,16 +21,26 @@ public class FeaturesExtractionHandlerImp implements FeaturesExtractionHandler {
         SparkHandler sparkHandler = new SparkHandlerImp();
         StaticFeaturesExtractor staticFeaturesExtractor = new StaticFeaturesExtractorImp();
         DynamicFeaturesExtractor dynamicFeaturesExtractor = new DynamicFeaturesExtractorImp();
-        //submitting application to spark to be runned once and returns the logs.
+
         SparkApplication executedApplication = sparkHandler.HandleApplication(sparkApplication);
-        //extracting the static features from the static feature extractor
+        return getFeatures(staticFeaturesExtractor, dynamicFeaturesExtractor, executedApplication);
+    }
+
+    public List<Feature> extract(List<Configuration> configurations, SparkApplication sparkApplication) {
+        SparkHandler sparkHandler = new SparkHandlerImp();
+        StaticFeaturesExtractor staticFeaturesExtractor = new StaticFeaturesExtractorImp();
+        DynamicFeaturesExtractor dynamicFeaturesExtractor = new DynamicFeaturesExtractorImp();
+
+        SparkApplication executedApplication = sparkHandler.HandleApplication(configurations, sparkApplication);
+        return getFeatures(staticFeaturesExtractor, dynamicFeaturesExtractor, executedApplication);
+    }
+
+    private List<Feature> getFeatures(StaticFeaturesExtractor staticFeaturesExtractor, DynamicFeaturesExtractor dynamicFeaturesExtractor, SparkApplication executedApplication) {
         String physicalPlan = executedApplication.getPhysicalPlan();
         String optimizedLogicalPlan =  executedApplication.getOptimizedQueryPlan();
         List<Feature> staticFeatures = staticFeaturesExtractor.extract(physicalPlan, optimizedLogicalPlan);
-        //extracting the dynamic features from the dynamic features extractor
         String stagesJson = executedApplication.getStagesJson();
         List<Feature> dynamicFeatures = dynamicFeaturesExtractor.extract(stagesJson);
-        //merging the static and dynamic features into one list
         List<Feature> allExtractedfeatures = Stream.concat(staticFeatures.stream(), dynamicFeatures.stream())
                 .collect(Collectors.toList());
         return allExtractedfeatures;
