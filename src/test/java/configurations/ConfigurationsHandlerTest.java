@@ -1,23 +1,10 @@
 package configurations;
 
 import configurations.picker.BestConfigurationPicker;
-import configurations.picker.BestConfigurationsPickerImp;
 import configurations.samples.ConfigurationsSampler;
-import configurations.samples.ConfigurationsSamplerImp;
-import configurations.utilites.Configuration;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-import org.mockito.ArgumentMatchers;
-import spark.utilites.SparkApplication;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 public class ConfigurationsHandlerTest {
     ConfigurationsHandler configurationsHandler;

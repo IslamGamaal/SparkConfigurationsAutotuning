@@ -1,7 +1,5 @@
 package configurations.samples;
 
-import configurations.utilites.Configuration;
-
 import java.util.List;
 
 public interface ConfigurationsSampler {

@@ -10,7 +10,7 @@ public class ConfigurationsFilesHandlerImp implements ConfigurationsFilesHandler
     }
 
     @Override
-    public String writeConfigurationsInFile(List<Configuration> configurations) {
+    public String writeConfigurationsInFile(List<Configuration> configurations, List<String> sparkhistory) {
         return null;
     }
 }

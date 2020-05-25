@@ -19,6 +19,8 @@ public class BestConfigurationsPickerImp implements BestConfigurationPicker {
         List<Configuration> bestConfigurations = null;
         for (List<Configuration> sampleConfigurations: configurations) {
             sparkApplication = sparkHandler.HandleApplication(sampleConfigurations , sparkApplication);
+            if (sparkApplication == null)
+                return null;
             if (sparkApplication.getLastRunTime() < bestTime) {
                 bestConfigurations = sampleConfigurations;
             }

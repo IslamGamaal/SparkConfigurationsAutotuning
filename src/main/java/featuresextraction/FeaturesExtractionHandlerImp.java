@@ -16,26 +16,31 @@ import java.util.stream.Stream;
 
 
 public class FeaturesExtractionHandlerImp implements FeaturesExtractionHandler {
+    SparkHandler sparkHandler;
+    StaticFeaturesExtractor staticFeaturesExtractor;
+    DynamicFeaturesExtractor dynamicFeaturesExtractor;
+
+    public FeaturesExtractionHandlerImp() {
+        sparkHandler = new SparkHandlerImp();
+        staticFeaturesExtractor = new StaticFeaturesExtractorImp();
+        dynamicFeaturesExtractor = new DynamicFeaturesExtractorImp();
+    }
 
     public List<Feature> extract(SparkApplication sparkApplication) {
-        SparkHandler sparkHandler = new SparkHandlerImp();
-        StaticFeaturesExtractor staticFeaturesExtractor = new StaticFeaturesExtractorImp();
-        DynamicFeaturesExtractor dynamicFeaturesExtractor = new DynamicFeaturesExtractorImp();
-
         SparkApplication executedApplication = sparkHandler.HandleApplication(sparkApplication);
-        return getFeatures(staticFeaturesExtractor, dynamicFeaturesExtractor, executedApplication);
+        if (executedApplication == null)
+            return null;
+        return getFeatures(executedApplication);
     }
 
     public List<Feature> extract(List<Configuration> configurations, SparkApplication sparkApplication) {
-        SparkHandler sparkHandler = new SparkHandlerImp();
-        StaticFeaturesExtractor staticFeaturesExtractor = new StaticFeaturesExtractorImp();
-        DynamicFeaturesExtractor dynamicFeaturesExtractor = new DynamicFeaturesExtractorImp();
-
         SparkApplication executedApplication = sparkHandler.HandleApplication(configurations, sparkApplication);
-        return getFeatures(staticFeaturesExtractor, dynamicFeaturesExtractor, executedApplication);
+        if (executedApplication == null)
+            return null;
+        return getFeatures(executedApplication);
     }
 
-    private List<Feature> getFeatures(StaticFeaturesExtractor staticFeaturesExtractor, DynamicFeaturesExtractor dynamicFeaturesExtractor, SparkApplication executedApplication) {
+    private List<Feature> getFeatures(SparkApplication executedApplication) {
         String physicalPlan = executedApplication.getPhysicalPlan();
         String optimizedLogicalPlan =  executedApplication.getOptimizedQueryPlan();
         List<Feature> staticFeatures = staticFeaturesExtractor.extract(physicalPlan, optimizedLogicalPlan);
