@@ -48,11 +48,23 @@ public class utils {
     private static void prepareConfigs(List<Configuration> configs, Map<String, Object> confsSpecs) {
         List<String> configurations = (List<String>)confsSpecs.get("configurations");
         List<String> confUnit = (List<String>)confsSpecs.get("confunit");
+        List<String> isboolean = (List<String>)confsSpecs.get("isboolean");
+        List<String> isint = (List<String>)confsSpecs.get("isint");
 
         for (int i = 0; i < configurations.size(); i++) {
             Configuration newConfiguration = new Configuration();
             newConfiguration.setName(configurations.get(i));
             newConfiguration.setUnit(confUnit.get(i));
+            if (isboolean.get(i).equalsIgnoreCase("t")){
+                newConfiguration.setBoolean(true);
+            }
+            else
+                newConfiguration.setBoolean(false);
+            if (isint.get(i).equalsIgnoreCase("t")){
+                newConfiguration.setInteger(true);
+            }
+            else
+                newConfiguration.setInteger(false);
             configs.add(newConfiguration);
         }
     }
@@ -95,6 +107,20 @@ public class utils {
                     }
                     confsSpecs.put("confunit" , confunit);
 
+                }
+                else if(lineSplitted[0].equalsIgnoreCase("isboolean")){
+                    List<String> isboolean = new ArrayList<>();
+                    for (int i = 1; i < lineSplitted.length; i++) {
+                        isboolean.add(lineSplitted[i]);
+                    }
+                    confsSpecs.put("isboolean" , isboolean);
+                }
+                else if(lineSplitted[0].equalsIgnoreCase("isint")){
+                    List<String> isint = new ArrayList<>();
+                    for (int i = 1; i < lineSplitted.length; i++) {
+                        isint.add(lineSplitted[i]);
+                    }
+                    confsSpecs.put("isint" , isint);
                 }
                 else if(lineSplitted[0].equalsIgnoreCase("sparkhistory")){
                     List<String> sparkhistory = new ArrayList<>();
