@@ -55,23 +55,23 @@ public class DynamicFeaturesExtractorImp implements DynamicFeaturesExtractor {
         else memorySpillingRatio = memoryBytesSpilled / (memoryBytesSpilled + diskBytesSpilled);
         diskSpillingRatio = 1 - memorySpillingRatio;
 
-        dynamicFeatures.add(new Feature(SupportedFeatures.NUM_OF_STAGES, stages.length()));
-        dynamicFeatures.add(new Feature(SupportedFeatures.EXECUTOR_RUN_TIME, executorRunTime));
-        dynamicFeatures.add(new Feature(SupportedFeatures.EXECUTOR_CPU_TIME, executorCPUTime));
-        dynamicFeatures.add(new Feature(SupportedFeatures.INPUT_BYTES, inputBytes));
-        dynamicFeatures.add(new Feature(SupportedFeatures.INPUT_RECORDS_COUNT, inputRecordsCount));
-        dynamicFeatures.add(new Feature(SupportedFeatures.OUTPUT_BYTES, outputBytes));
-        dynamicFeatures.add(new Feature(SupportedFeatures.OUTPUT_RECORDS_COUNT, outputRecordsCount));
-        dynamicFeatures.add(new Feature(SupportedFeatures.SHUFFLE_READ_BYTES, shuffleReadBytes));
-        dynamicFeatures.add(new Feature(SupportedFeatures.SHUFFLE_READ_RECORDS, shuffleReadRecords));
-        dynamicFeatures.add(new Feature(SupportedFeatures.SHUFFLE_WRITE_BYTES, shuffleWriteBytes));
-        dynamicFeatures.add(new Feature(SupportedFeatures.SHUFFLE_WRITE_RECORDS, shuffleWriteRecords));
-        dynamicFeatures.add(new Feature(SupportedFeatures.MEMORY_BYTES_SPILLED, memoryBytesSpilled));
-        dynamicFeatures.add(new Feature(SupportedFeatures.DISK_BYTES_SPILLED, diskBytesSpilled));
-        dynamicFeatures.add(new Feature(SupportedFeatures.RDDS_AFFECTED_COUNT, rddsAffectedCount));
-        dynamicFeatures.add(new Feature(SupportedFeatures.CPU_TIME_RATIO, cpuTimeRatio));
-        dynamicFeatures.add(new Feature(SupportedFeatures.MEMORY_SPILLING_RATIO, memorySpillingRatio));
-        dynamicFeatures.add(new Feature(SupportedFeatures.DISK_SPILLING_RATIO, diskSpillingRatio));
+        dynamicFeatures.add(new Feature(SupportedFeatures.NUM_OF_STAGES, String.valueOf(stages.length()) , "string"));
+        dynamicFeatures.add(new Feature(SupportedFeatures.EXECUTOR_RUN_TIME, String.valueOf(executorRunTime), "string"));
+        dynamicFeatures.add(new Feature(SupportedFeatures.EXECUTOR_CPU_TIME, String.valueOf(executorCPUTime), "string"));
+        dynamicFeatures.add(new Feature(SupportedFeatures.INPUT_BYTES, String.valueOf(inputBytes), "string"));
+        dynamicFeatures.add(new Feature(SupportedFeatures.INPUT_RECORDS_COUNT, String.valueOf(inputRecordsCount), "string"));
+        dynamicFeatures.add(new Feature(SupportedFeatures.OUTPUT_BYTES, String.valueOf(outputBytes),"string"));
+        dynamicFeatures.add(new Feature(SupportedFeatures.OUTPUT_RECORDS_COUNT, String.valueOf(outputRecordsCount),"string"));
+        dynamicFeatures.add(new Feature(SupportedFeatures.SHUFFLE_READ_BYTES, String.valueOf(shuffleReadBytes),"string"));
+        dynamicFeatures.add(new Feature(SupportedFeatures.SHUFFLE_READ_RECORDS, String.valueOf(shuffleReadRecords),"string"));
+        dynamicFeatures.add(new Feature(SupportedFeatures.SHUFFLE_WRITE_BYTES, String.valueOf(shuffleWriteBytes),"string"));
+        dynamicFeatures.add(new Feature(SupportedFeatures.SHUFFLE_WRITE_RECORDS, String.valueOf(shuffleWriteRecords),"string"));
+        dynamicFeatures.add(new Feature(SupportedFeatures.MEMORY_BYTES_SPILLED, String.valueOf(memoryBytesSpilled),"string"));
+        dynamicFeatures.add(new Feature(SupportedFeatures.DISK_BYTES_SPILLED, String.valueOf(diskBytesSpilled),"string"));
+        dynamicFeatures.add(new Feature(SupportedFeatures.RDDS_AFFECTED_COUNT, String.valueOf(rddsAffectedCount),"string"));
+        dynamicFeatures.add(new Feature(SupportedFeatures.CPU_TIME_RATIO, String.valueOf(cpuTimeRatio),"string"));
+        dynamicFeatures.add(new Feature(SupportedFeatures.MEMORY_SPILLING_RATIO, String.valueOf(memorySpillingRatio),"string"));
+        dynamicFeatures.add(new Feature(SupportedFeatures.DISK_SPILLING_RATIO, String.valueOf(diskSpillingRatio),"string"));
 
         return dynamicFeatures;
     }

@@ -114,9 +114,9 @@ public class StaticFeaturesExtractorImp implements StaticFeaturesExtractor {
 
     private List<Feature> createFeaturesList(boolean aggregation, boolean projection, boolean join) {
         List<Feature> features = new ArrayList<>();
-        features.add(new Feature(SupportedFeatures.IS_AGGREGATE, aggregation));
-        features.add(new Feature(SupportedFeatures.IS_PROJECTION, projection));
-        features.add(new Feature(SupportedFeatures.IS_JOIN, join));
+        features.add(new Feature(SupportedFeatures.IS_AGGREGATE, aggregation , "boolean"));
+        features.add(new Feature(SupportedFeatures.IS_PROJECTION, projection ,"boolean"));
+        features.add(new Feature(SupportedFeatures.IS_JOIN, join , "boolean"));
         return features;
     }
 }

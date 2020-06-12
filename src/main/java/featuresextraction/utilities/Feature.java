@@ -6,9 +6,10 @@ public class Feature {
     private String valueType;
     //float ,int, array of float
 
-    public Feature(SupportedFeatures featureName, Object value) {
+    public Feature(SupportedFeatures featureName, Object value , String valueType) {
         this.featureName = featureName;
         this.value = value;
+        this.valueType = valueType;
     }
 
     public String getFeatureName() {
