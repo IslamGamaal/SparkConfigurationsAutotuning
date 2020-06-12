@@ -28,16 +28,16 @@ public class SparkHistoryServerHandlerImp implements SparkHistoryServerHandler {
     }
 
     @Override
-    public Executor getLatestAppExecutorSettings() {
+    public Executor[] getLatestAppExecutorSettings() {
         ObjectMapper mapper = new ObjectMapper();
         String executorJson = readFromFile("resources/executors.json");
-        Executor executor = new Executor();
+        Executor[] executorList = null;
         try {
-            executor = mapper.readValue(executorJson, Executor.class);
+            executorList = mapper.readValue(executorJson, Executor[].class);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return executor;
+        return executorList;
     }
 
     private String readFromFile(String filePath) {

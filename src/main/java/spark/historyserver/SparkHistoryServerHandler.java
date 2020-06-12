@@ -26,5 +26,5 @@ public interface SparkHistoryServerHandler {
      *
      * @return Executor: the optimized logical plan for the latest application.
      **/
-    Executor getLatestAppExecutorSettings();
+    Executor[] getLatestAppExecutorSettings();
 }
