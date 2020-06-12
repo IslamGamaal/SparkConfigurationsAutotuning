@@ -1,24 +1,59 @@
 package configurations.utilites;
 
- public interface Configuration {
+public class Configuration {
+
+    private float value;
+    private boolean isBoolean;
+    private boolean isInteger;
+    private String name;
+    private String unit;
+
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
+
+    public boolean isBoolean() {
+        return isBoolean;
+    }
+
     
-     boolean isBoolean();
+    public void setBoolean(boolean bool) {
+        this.isBoolean = bool;
+    }
 
-     void setBoolean(boolean bool);
+    
+    public boolean isInteger() {
+        return isInteger;
+    }
 
-     boolean isInteger();
+    
+    public void setInteger(boolean bool) {
+        this.isInteger = bool;
+    }
 
-     void setInteger(boolean bool);
+    
+    public float getValue() {
+        return value;
+    }
 
-     float getValue();
+    
+    public void setValue(float value) {
+        this.value = value;
+    }
 
-     void setValue(float value);
+    
+    public String getName() {
+        return name;
+    }
 
-     String getName();
-
-     void setName(String name);
-
-
+    
+    public void setName(String name) {
+        this.name = name;
+    }
 
 
 }

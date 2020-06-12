@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class SparkSubmitterImp implements SparkSubmitter {
-    public void submitApplication(SparkApplication sparkApplication , SparkRunInfo sparkRunInfo) {
+    public int submitApplication(SparkApplication sparkApplication , SparkRunInfo sparkRunInfo) {
         String sparkSubmitCommand = createSparkSubmitCommand(sparkApplication , sparkRunInfo);
         ProcessBuilder processBuilder = new ProcessBuilder("/bin/bash" , "-c" , sparkRunInfo.getSparkDirectory() + "/bin/" + sparkSubmitCommand);
         try {
@@ -21,9 +21,10 @@ public class SparkSubmitterImp implements SparkSubmitter {
                 System.out.println(line);
             }
             int exitCode = process.waitFor();
-            System.out.println("\nExited with error code : " + exitCode);
+            return exitCode;
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
+            return -1;
         }
     }
 
