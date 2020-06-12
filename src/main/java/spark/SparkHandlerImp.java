@@ -35,6 +35,7 @@ public class SparkHandlerImp implements SparkHandler {
         SparkRunInfo sparkRunInfo = new SparkRunInfo();
         ConfigurationsFilesHandler configurationsFilesHandler = new ConfigurationsFilesHandlerImp();
         sparkRunInfo.setConfigsFilePath(configurationsFilesHandler.writeConfigurationsInFile(configurations , (List<String>)confsSpecs.get("sparkhistory")));
+        sparkRunInfo.setSparkDirectory((String) confsSpecs.get("sparkdirectory"));
         if (sparkSubmitter.submitApplication(sparkApplication, sparkRunInfo) == -1){
             return null;
         }

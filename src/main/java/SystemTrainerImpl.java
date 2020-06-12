@@ -12,19 +12,23 @@ import spark.utilites.SparkApplication;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class SystemTrainerImpl implements SystemTrainer {
     FeaturesExtractionHandler featuresExtractionHandler;
     ConfigurationsHandler configurationsHandler;
     Classifier classifier;
+    Logger logger;
 
     public SystemTrainerImpl() {
         featuresExtractionHandler = new FeaturesExtractionHandlerImp();
         configurationsHandler = new ConfigurationsHandlerImp();
         classifier = new ClassifierImp();
+        logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
     }
 
-    public boolean trainSystem(List<SparkApplication> applications) {
+    public boolean trainSystem(List<SparkApplication> applications , String mode) {
 
         List<DataSetPair> dataSetPairs = new ArrayList<>();
         for (SparkApplication sparkApplication: applications) {
@@ -36,6 +40,8 @@ public class SystemTrainerImpl implements SystemTrainer {
                 continue;
             DataSetPair newDataSetPair = new DataSetPair(features , configurations);
             dataSetPairs.add(newDataSetPair);
+            logger.log(Level.INFO , "application name1 : " + sparkApplication.getName() + "\n");
+            logger.log(Level.INFO , "features : \n");
         }
 
         classifier.trainModel(dataSetPairs);

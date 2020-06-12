@@ -129,6 +129,10 @@ public class utils {
                     }
                     confsSpecs.put("sparkhistory" , sparkhistory);
                 }
+                else if (lineSplitted[0].equalsIgnoreCase("sparkdirectory")){
+                    if (lineSplitted.length > 1)
+                        confsSpecs.put("sparkdirectory" , lineSplitted[1]);
+                }
             }
 
         } catch (IOException e) {
