@@ -114,6 +114,10 @@ public class HistoryClient {
                 Report report = new Report();
                 applications.stream().forEach(application -> {
                     try {
+                        try (InputStream inputStream = request(httpClient, String.format(APPLICATIONS_API, host, limit))) {
+                            String targetFilePath = "resources/applications.json";
+                            writeStream(inputStream, targetFilePath);
+                        }
                         try (InputStream inputStream = request(httpClient, String.format(APPLICATION_ENVIRONMENT_API, host, application.getId()))) {
                             String targetFilePath = "resources/environment.json";
                             writeStream(inputStream, targetFilePath);

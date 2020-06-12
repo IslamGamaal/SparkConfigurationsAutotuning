@@ -1,7 +1,8 @@
 package spark.historyserver;
 
 import spark.historyserver.model.Environment;
-import spark.historyserver.model.Executor;
+
+import java.util.Map;
 
 public interface SparkHistoryServerHandler {
     /**
@@ -16,7 +17,7 @@ public interface SparkHistoryServerHandler {
      * This functions extracts the Environment settings for the latest
      * submitted application from spark history server logs.
      *
-     * @return Environment: the optimized logical plan for the latest application.
+     * @return Environment: the Environment settings.
      **/
     Environment getLatestAppEnvironmentSettings();
 
@@ -24,7 +25,15 @@ public interface SparkHistoryServerHandler {
      * This functions extracts the Executor settings for the latest
      * submitted application from spark history server logs.
      *
-     * @return Executor: the optimized logical plan for the latest application.
+     * @return Map<String, String>: the Executor settings.
      **/
-    Executor[] getLatestAppExecutorSettings();
+    Map<String, String> getLatestAppExecutorSettings();
+
+    /**
+     * This functions extracts the Executor settings for the latest
+     * submitted application from spark history server logs.
+     *
+     * @return Map<String, String>: the Executor settings.
+     **/
+    Long getLatestAppDuration();
 }
