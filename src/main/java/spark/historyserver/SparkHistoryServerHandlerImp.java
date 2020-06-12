@@ -1,13 +1,14 @@
 package spark.historyserver;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import spark.historyserver.model.Application;
 import spark.historyserver.model.Environment;
 import spark.historyserver.model.Executor;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Scanner;
+import java.util.*;
 
 public class SparkHistoryServerHandlerImp implements SparkHistoryServerHandler {
     public String getLatestAppStagesJson() {
@@ -28,7 +29,7 @@ public class SparkHistoryServerHandlerImp implements SparkHistoryServerHandler {
     }
 
     @Override
-    public Executor[] getLatestAppExecutorSettings() {
+    public Map<String, String> getLatestAppExecutorSettings() {
         ObjectMapper mapper = new ObjectMapper();
         String executorJson = readFromFile("resources/executors.json");
         Executor[] executorList = null;
@@ -37,7 +38,7 @@ public class SparkHistoryServerHandlerImp implements SparkHistoryServerHandler {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return executorList;
+        return setExecutorSettings(executorList);
     }
 
     private String readFromFile(String filePath) {
@@ -54,5 +55,36 @@ public class SparkHistoryServerHandlerImp implements SparkHistoryServerHandler {
             e.printStackTrace();
         }
         return fileContents.toString();
+    }
+    private Map<String, String> setExecutorSettings(Executor[] executors) {
+        Map<String, String> executorSettings = new HashMap<>();
+        Long totalCores = 0L;
+        for (Executor executor : executors) {
+            if (!executor.getId().equals("driver") && totalCores < executor.getTotalCores()) {
+                totalCores = executor.getTotalCores();
+            }
+        }
+        Long maxMemory = 0L;
+        for (Executor executor : executors) {
+            if (!executor.getId().equals("driver")) {
+                maxMemory += executor.getMaxMemory();
+            }
+        }
+        executorSettings.put("TotalCores", String.valueOf(totalCores));
+        executorSettings.put("MaxMemory", String.valueOf(maxMemory));
+        return executorSettings;
+    }
+
+    @Override
+    public Long getLatestAppDuration() {
+        ObjectMapper mapper = new ObjectMapper();
+        String applicationsJson = readFromFile("resources/applications.json");
+        Application[] applicationsList = null;
+        try {
+            applicationsList = mapper.readValue(applicationsJson, Application[].class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return applicationsList[0].getAttempts()[applicationsList[0].getAttempts().length-1].getDuration();
     }
 }

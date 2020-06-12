@@ -11,7 +11,7 @@ public class SparkHistoryServerHandlerTest {
 
     @Test
     public void test() {
-        Executor[] env = handler.getLatestAppExecutorSettings();
-        System.out.println();
+        Long duration = handler.getLatestAppDuration();
+        System.out.println(duration);
     }
 }
