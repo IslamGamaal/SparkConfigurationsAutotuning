@@ -115,19 +115,19 @@ public class HistoryClient {
                 applications.stream().forEach(application -> {
                     try {
                         try (InputStream inputStream = request(httpClient, String.format(APPLICATION_ENVIRONMENT_API, host, application.getId()))) {
-                            String targetFilePath = "resources/"+application.getName()+"_environment.json";
+                            String targetFilePath = "resources/environment.json";
                             writeStream(inputStream, targetFilePath);
                         }
                         try (InputStream inputStream = request(httpClient, String.format(APPLICATION_JOBS_API, host, application.getId()))) {
-                            String targetFilePath = "resources/"+application.getName()+"_jobs.json";
+                            String targetFilePath = "resources/jobs.json";
                             writeStream(inputStream, targetFilePath);
                         }
                         try(InputStream inputStream = request(httpClient, String.format(APPLICATION_STAGES_API, host, application.getId()))) {
-                            String targetFilePath = "resources/"+application.getName()+"_stages.json";
+                            String targetFilePath = "resources/stages.json";
                             writeStream(inputStream, targetFilePath);
                         }
                         try (InputStream inputStream = request(httpClient, String.format(APPLICATION_EXECUTORS_API, host, application.getId()))) {
-                            String targetFilePath = "resources/"+application.getName()+"_executors.json";
+                            String targetFilePath = "resources/executors.json";
                             writeStream(inputStream, targetFilePath);
                         }
                     } catch (Exception exception) {

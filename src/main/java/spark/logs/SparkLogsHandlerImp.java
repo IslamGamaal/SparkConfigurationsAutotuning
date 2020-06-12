@@ -1,5 +1,9 @@
 package spark.logs;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import spark.historyserver.model.Environment;
+import spark.historyserver.model.Executor;
+
 public class SparkLogsHandlerImp implements SparkLogsHandler {
     public String getLatestAppPhysicalPlan() {
         return "*(17) Sort [revenue#396 DESC NULLS LAST], true, 0\n" +
