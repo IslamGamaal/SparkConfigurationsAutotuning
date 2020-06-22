@@ -1,8 +1,9 @@
-ub 4 16 16 128 0.8 0.8 4 64 16 60 10 1 1
-lb 4 12 12 48 0.6 0.5 1 32 4 15 3 0 0
+ub 4 4 4 128 0.8 0.8 4 64 16 60 10 1 1
+lb 1 1 1 48 0.6 0.5 1 32 4 15 3 0 0
 configurations spark.driver.cores spark.driver.memory spark.executor.memory spark.reducer.maxSizeInFlight spark.memory.fraction spark.memory.storageFraction spark.executor.cores spark.shuffle.file.buffer spark.broadcast.blockSize spark.default.parallelism spark.locality.wait spark.shuffle.compress spark.shuffle.spill.compress
-confunit -  g  g  m  -  -  -   k  m  -  s  - -
+confunit - g g m - - - k m - s - -
 isboolean f f f f f f f f f f f t t
 isint t t t t False False t t t t t t t
-sparkhistory spark.eventLog.enabled true  spark.eventLog.dir /home/node11/Public/autoTuning/sparkhistory spark.history.fs.logDirectory /home/node11/Public/autoTuning/sparkhistory
+sparkhistory spark.eventLog.enabled true spark.eventLog.dir file:///home/akrammoussa/Downloads/incorta/spark/logs spark.history.fs.logDirectory file:///home/akrammoussa/Downloads/incorta/spark/logs spark.local.dir file:///mnt/01D43FA6387D16F0/spark-temp
 sparkdirectory /home/akrammoussa/Downloads/incorta/spark/spark-2.4.3-bin-hadoop2.7
+sparkMaster spark://AkramMoussa:7077

@@ -6,6 +6,7 @@ import spark.SparkHandlerImp;
 import spark.utilites.SparkApplication;
 
 import java.util.List;
+import java.util.Map;
 
 public class BestConfigurationsPickerImp implements BestConfigurationPicker {
     private SparkHandler sparkHandler ;
@@ -18,13 +19,21 @@ public class BestConfigurationsPickerImp implements BestConfigurationPicker {
         long bestTime = Long.MAX_VALUE;
         List<Configuration> bestConfigurations = null;
         for (List<Configuration> sampleConfigurations: configurations) {
-            sparkApplication = sparkHandler.HandleApplication(sampleConfigurations , sparkApplication);
-            if (sparkApplication == null)
-                return null;
-            if (sparkApplication.getLastRunTime() < bestTime) {
+            SparkApplication tempSparkApplication = sparkHandler.HandleApplication(sampleConfigurations , sparkApplication);
+            if (tempSparkApplication == null)
+                continue;
+            if (tempSparkApplication.getLastRunTime() < bestTime) {
+                //TODO FIX REPLACING
+                replaceActualConfigurations(sampleConfigurations , tempSparkApplication.getLastRunActualConfigurations());
+                bestTime = tempSparkApplication.getLastRunTime();
                 bestConfigurations = sampleConfigurations;
             }
         }
         return bestConfigurations;
+    }
+
+    private void replaceActualConfigurations(List<Configuration> sampleConfigurations, Map<String, String> lastRunActualConfigurations) {
+        sampleConfigurations.get(2).setValue((float) Math.ceil(Long.parseLong(lastRunActualConfigurations.get("MaxMemory"))));
+        sampleConfigurations.get(6).setValue(Float.parseFloat(lastRunActualConfigurations.get("spark.executor.cores")));
     }
 }

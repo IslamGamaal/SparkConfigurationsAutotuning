@@ -133,6 +133,10 @@ public class utils {
                     if (lineSplitted.length > 1)
                         confsSpecs.put("sparkdirectory" , lineSplitted[1]);
                 }
+                else if (lineSplitted[0].equalsIgnoreCase("sparkmaster")){
+                    if (lineSplitted.length > 1)
+                        confsSpecs.put("sparkmaster" , lineSplitted[1]);
+                }
             }
 
         } catch (IOException e) {

@@ -36,21 +36,25 @@ public class SparkHandlerImp implements SparkHandler {
         ConfigurationsFilesHandler configurationsFilesHandler = new ConfigurationsFilesHandlerImp();
         sparkRunInfo.setConfigsFilePath(configurationsFilesHandler.writeConfigurationsInFile(configurations , (List<String>)confsSpecs.get("sparkhistory")));
         sparkRunInfo.setSparkDirectory((String) confsSpecs.get("sparkdirectory"));
-        if (sparkSubmitter.submitApplication(sparkApplication, sparkRunInfo) == -1){
-            return null;
-        }
-        sparkApplication.setStagesJson(sparkHistoryServerHandler.getLatestAppStagesJson());
-        sparkApplication.setOptimizedQueryPlan(sparkLogsHandler.getLatestAppOptimizedLogicalPlan());
-        sparkApplication.setPhysicalPlan(sparkLogsHandler.getLatestAppPhysicalPlan());
-        return sparkApplication;
+        sparkRunInfo.setSparkMaster((String) confsSpecs.get("sparkmaster"));
+        return runSparkApplication(sparkApplication, sparkRunInfo);
     }
 
     public SparkApplication HandleApplication(SparkApplication sparkApplication) {
         SparkRunInfo sparkRunInfo = new SparkRunInfo();
-        if (sparkSubmitter.submitApplication(sparkApplication, sparkRunInfo) == -1){
+        sparkRunInfo.setSparkDirectory((String) confsSpecs.get("sparkdirectory"));
+        sparkRunInfo.setSparkMaster((String) confsSpecs.get("sparkmaster"));
+        return runSparkApplication(sparkApplication, sparkRunInfo);
+    }
+
+    private SparkApplication runSparkApplication(SparkApplication sparkApplication, SparkRunInfo sparkRunInfo) {
+        int status = sparkSubmitter.submitApplication(sparkApplication, sparkRunInfo);
+        if ( status == -1 || status == 1){
             return null;
         }
         sparkApplication.setStagesJson(sparkHistoryServerHandler.getLatestAppStagesJson());
+        sparkApplication.setLastRunTime(sparkHistoryServerHandler.getLatestAppDuration());
+        sparkApplication.setLastRunActualConfigurations(sparkHistoryServerHandler.getLatestAppExecutorSettings());
         sparkApplication.setOptimizedQueryPlan(sparkLogsHandler.getLatestAppOptimizedLogicalPlan());
         sparkApplication.setPhysicalPlan(sparkLogsHandler.getLatestAppPhysicalPlan());
         return sparkApplication;

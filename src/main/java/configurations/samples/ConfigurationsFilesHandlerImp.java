@@ -25,10 +25,18 @@ public class ConfigurationsFilesHandlerImp implements ConfigurationsFilesHandler
                         myWriter.write(" false");
                 }
                 else{
-                    myWriter.write(" " + configurations.get(i).getValue());
+                    if (configurations.get(i).isInteger()){
+                        myWriter.write(" " + (int)configurations.get(i).getValue());
+
+                    }
+                    else {
+                        myWriter.write(" " + configurations.get(i).getValue());
+                    }
                 }
-                if (i<configurations.size() - 1)
-                    myWriter.write("\n");
+                if (!configurations.get(i).getUnit().equalsIgnoreCase("-")){
+                    myWriter.write(configurations.get(i).getUnit());
+                }
+                myWriter.write("\n");
             }
             for (int i = 0; i < sparkhistory.size(); i++) {
                 myWriter.write(sparkhistory.get(i));

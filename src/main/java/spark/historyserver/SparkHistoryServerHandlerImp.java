@@ -66,11 +66,10 @@ public class SparkHistoryServerHandlerImp implements SparkHistoryServerHandler {
         }
         Long maxMemory = 0L;
         for (Executor executor : executors) {
-            if (!executor.getId().equals("driver")) {
-                maxMemory += executor.getMaxMemory();
-            }
+            maxMemory += executor.getMaxMemory();
+
         }
-        executorSettings.put("TotalCores", String.valueOf(totalCores));
+        executorSettings.put("spark.executor.cores", String.valueOf(totalCores));
         executorSettings.put("MaxMemory", String.valueOf(maxMemory));
         return executorSettings;
     }

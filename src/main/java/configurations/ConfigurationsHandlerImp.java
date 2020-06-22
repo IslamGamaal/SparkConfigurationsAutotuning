@@ -2,10 +2,7 @@ package configurations;
 
 import configurations.picker.BestConfigurationPicker;
 import configurations.picker.BestConfigurationsPickerImp;
-import configurations.samples.ConfigurationsFilesHandler;
-import configurations.samples.ConfigurationsFilesHandlerImp;
-import configurations.samples.ConfigurationsSampler;
-import configurations.samples.ConfigurationsSamplerImp;
+import configurations.samples.*;
 import configurations.utilites.Configuration;
 import configurations.utilites.utils;
 import spark.utilites.SparkApplication;
@@ -22,7 +19,7 @@ public class ConfigurationsHandlerImp implements ConfigurationsHandler {
     private ConfigurationsFilesHandler configurationsFilesHandler;
 
     public ConfigurationsHandlerImp(){
-        this.configurationsSampler = new ConfigurationsSamplerImp();
+        this.configurationsSampler = new BinaryHyperCubeSampler();
         this.bestConfigurationPicker = new BestConfigurationsPickerImp();
         this.configurationsFilesHandler = new ConfigurationsFilesHandlerImp();
         this.confsSpecs = new HashMap<>();
@@ -32,7 +29,7 @@ public class ConfigurationsHandlerImp implements ConfigurationsHandler {
 
 
     public List<Configuration> applyApplication(SparkApplication sparkApplication , Map<String, Object> parameters) {
-        List<List<Float>> configurationsSamples = configurationsSampler.generateSamples((Integer) parameters.getOrDefault("samplesNum" , 200), (List<Float>) confsSpecs.get("ub"), (List<Float>) confsSpecs.get("lb"));
+        List<List<Float>> configurationsSamples = configurationsSampler.generateSamples((Integer) parameters.getOrDefault("samplesNum" , 3), (List<Float>) confsSpecs.get("ub"), (List<Float>) confsSpecs.get("lb"));
         List<List<Configuration>> configurations = new ArrayList<>();
         for (List<Float> configurationsSample : configurationsSamples) {
             List<Configuration> configurationsList = utils.getConfigurationsList(configurationsSample , this.confsSpecs);

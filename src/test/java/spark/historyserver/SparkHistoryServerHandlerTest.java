@@ -3,7 +3,6 @@ package spark.historyserver;
 import org.junit.Test;
 import spark.historyserver.model.Environment;
 import spark.historyserver.model.Executor;
-import spark.historyserver.model.ExecutorList;
 
 public class SparkHistoryServerHandlerTest {
 
