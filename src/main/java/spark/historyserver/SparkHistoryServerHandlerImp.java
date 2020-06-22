@@ -41,21 +41,7 @@ public class SparkHistoryServerHandlerImp implements SparkHistoryServerHandler {
         return setExecutorSettings(executorList);
     }
 
-    private String readFromFile(String filePath) {
-        StringBuilder fileContents = new StringBuilder();
-        try {
-            File myObj = new File(filePath);
-            Scanner myReader = new Scanner(myObj);
-            while (myReader.hasNextLine()) {
-                fileContents.append(myReader.nextLine());
-            }
-            myReader.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
-        return fileContents.toString();
-    }
+
     private Map<String, String> setExecutorSettings(Executor[] executors) {
         Map<String, String> executorSettings = new HashMap<>();
         Long totalCores = 0L;
@@ -85,5 +71,21 @@ public class SparkHistoryServerHandlerImp implements SparkHistoryServerHandler {
             e.printStackTrace();
         }
         return applicationsList[0].getAttempts()[applicationsList[0].getAttempts().length-1].getDuration();
+    }
+
+    private String readFromFile(String filePath) {
+        StringBuilder fileContents = new StringBuilder();
+        try {
+            File myObj = new File(filePath);
+            Scanner myReader = new Scanner(myObj);
+            while (myReader.hasNextLine()) {
+                fileContents.append(myReader.nextLine());
+            }
+            myReader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+        return fileContents.toString();
     }
 }
