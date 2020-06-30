@@ -55,7 +55,7 @@ public class SystemTrainerImpl implements SystemTrainer {
     private void logApplication(SparkApplication sparkApplication, List<Feature> features, List<Configuration> configurations) {
 
         try {
-            File file = new File("/mnt/01D43FA6387D16F0/GP-general/SparkConfigurationsAutotuning/resources/appslogs");
+            File file = new File(System.getProperty("user.dir")+ "/resources/appslogs");
             FileWriter fr = new FileWriter(file, true);
             fr.write("app name : " + sparkApplication.getName() + "\n");
             fr.write("features \n" );
@@ -71,7 +71,24 @@ public class SystemTrainerImpl implements SystemTrainer {
             }
             fr.write("configurations\n");
             for (Configuration configuration : configurations) {
-                fr.write(configuration.getName() + " " + configuration.getValue() + "\n");
+                fr.write(configuration.getName() + " " );
+                if(configuration.isInteger()){
+                    if (configuration.isBoolean()) {
+                        fr.write((int) configuration.getValue() == 1 ? "true" : "false");
+                    }
+                    else{
+                        fr.write((int) configuration.getValue() + "");
+                    }
+                }
+                else{
+                    fr.write(configuration.getValue() + "");
+                }
+                if (!configuration.getUnit().equalsIgnoreCase("-")){
+                    fr.write(configuration.getUnit());
+                }
+                fr.write("\n");
+
+
             }
             fr.close();
         } catch (IOException e) {

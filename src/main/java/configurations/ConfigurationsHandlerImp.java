@@ -29,7 +29,7 @@ public class ConfigurationsHandlerImp implements ConfigurationsHandler {
 
 
     public List<Configuration> applyApplication(SparkApplication sparkApplication , Map<String, Object> parameters) {
-        List<List<Float>> configurationsSamples = configurationsSampler.generateSamples((Integer) parameters.getOrDefault("samplesNum" , 3), (List<Float>) confsSpecs.get("ub"), (List<Float>) confsSpecs.get("lb"));
+        List<List<Float>> configurationsSamples = configurationsSampler.generateSamples((Integer) parameters.getOrDefault("samplesNum" , 5), (List<Float>) confsSpecs.get("ub"), (List<Float>) confsSpecs.get("lb"));
         List<List<Configuration>> configurations = new ArrayList<>();
         for (List<Float> configurationsSample : configurationsSamples) {
             List<Configuration> configurationsList = utils.getConfigurationsList(configurationsSample , this.confsSpecs);

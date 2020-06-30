@@ -23,7 +23,7 @@ public class SparkLogsHandlerImp implements SparkLogsHandler {
             File myObj = new File(filePath);
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
-                fileContents.append(myReader.nextLine());
+                fileContents.append(myReader.nextLine()).append('\n');
             }
             myReader.close();
         } catch (FileNotFoundException e) {

@@ -33,7 +33,7 @@ public class BestConfigurationsPickerImp implements BestConfigurationPicker {
     }
 
     private void replaceActualConfigurations(List<Configuration> sampleConfigurations, Map<String, String> lastRunActualConfigurations) {
-        sampleConfigurations.get(2).setValue((float) Math.ceil(Long.parseLong(lastRunActualConfigurations.get("MaxMemory"))));
+        sampleConfigurations.get(2).setValue((float) Math.ceil(Float.parseFloat(lastRunActualConfigurations.get("MaxMemory"))/ (1024 * 1024 * 1024)));
         sampleConfigurations.get(6).setValue(Float.parseFloat(lastRunActualConfigurations.get("spark.executor.cores")));
     }
 }

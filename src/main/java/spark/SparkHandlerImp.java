@@ -4,7 +4,6 @@ import configurations.samples.ConfigurationsFilesHandler;
 import configurations.samples.ConfigurationsFilesHandlerImp;
 import configurations.utilites.Configuration;
 import configurations.utilites.utils;
-import org.moeaframework.problem.misc.Lis;
 import spark.historyserver.SparkHistoryServerHandler;
 import spark.historyserver.SparkHistoryServerHandlerImp;
 import spark.logs.SparkLogsHandler;
@@ -52,6 +51,12 @@ public class SparkHandlerImp implements SparkHandler {
         if ( status == -1 || status == 1){
             return null;
         }
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        sparkHistoryServerHandler.runHistoryServerClient();
         sparkApplication.setStagesJson(sparkHistoryServerHandler.getLatestAppStagesJson());
         sparkApplication.setLastRunTime(sparkHistoryServerHandler.getLatestAppDuration());
         sparkApplication.setLastRunActualConfigurations(sparkHistoryServerHandler.getLatestAppExecutorSettings());

@@ -22,7 +22,7 @@ import spark.historyserver.report.Summary;
 
 public class HistoryClient {
 
-    private static final String APPLICATIONS_API            = "http://%s/api/v1/applications?status=completed";
+    private static  final String APPLICATIONS_API            = "http://%s/api/v1/applications?status=completed";
     private static final String APPLICATION_EXECUTORS_API   = "http://%s/api/v1/applications/%s/executors";
     private static final String APPLICATION_JOBS_API        = "http://%s/api/v1/applications/%s/jobs";
     private static final String APPLICATION_STAGES_API      = "http://%s/api/v1/applications/%s/stages";
@@ -48,7 +48,7 @@ public class HistoryClient {
         return output.toString();
     }
 
-    private static <O, T> T aggregate(O[] arr, Function<O, T> e, BiFunction<T, T, T> acc) {
+    private  <O, T> T aggregate(O[] arr, Function<O, T> e, BiFunction<T, T, T> acc) {
         T total = null;
         for(O o: arr) {
             T v = e.apply(o);
@@ -61,7 +61,7 @@ public class HistoryClient {
         System.out.println(message);
     }
 
-    private static void error(String message, Throwable exception) {
+    public static void error(String message, Throwable exception) {
         System.err.println(message);
         exception.printStackTrace();
     }
@@ -83,7 +83,7 @@ public class HistoryClient {
         }
     }
 
-    private static InputStream clone(InputStream inputStream) {
+    private  InputStream clone(InputStream inputStream) {
         try {
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             byte[] buffer = new byte[1024];
@@ -100,7 +100,7 @@ public class HistoryClient {
         return inputStream;
     }
 
-    private static void process(String host, int limit, String outputPath) throws ClientProtocolException, IOException {
+    public static void process(String host, int limit, String outputPath) throws ClientProtocolException, IOException {
         DefaultHttpClient httpClient = new DefaultHttpClient();
         try {
             ObjectMapper objectMapper = new ObjectMapper();
@@ -145,19 +145,19 @@ public class HistoryClient {
         }
     }
 
-    public static void main(String[] args) {
-        final String host = "localhost:18080";
-        final int limit = Integer.MAX_VALUE;
-        final String filter = null;
-        Calendar calendar = Calendar.getInstance();
-        Date to = calendar.getTime();
-        calendar.add(Calendar.DAY_OF_WEEK, -100);
-        Date from = calendar.getTime();
-        String outputPath = String.format("history_%s_%s_%s.csv", filter, from.getTime(), to.getTime());
-        try {
-            process(host, limit, outputPath);
-        } catch (IOException e) {
-            error("Failed to connect to History Server", e);
-        }
-    }
+//    public  void main(String[] args) {
+//        final String host = "localhost:18080";
+//        final int limit = Integer.MAX_VALUE;
+//        final String filter = null;
+//        Calendar calendar = Calendar.getInstance();
+//        Date to = calendar.getTime();
+//        calendar.add(Calendar.DAY_OF_WEEK, -100);
+//        Date from = calendar.getTime();
+//        String outputPath = String.format("history_%s_%s_%s.csv", filter, from.getTime(), to.getTime());
+//        try {
+//            process(host, limit, outputPath);
+//        } catch (IOException e) {
+//            error("Failed to connect to History Server", e);
+//        }
+//    }
 }

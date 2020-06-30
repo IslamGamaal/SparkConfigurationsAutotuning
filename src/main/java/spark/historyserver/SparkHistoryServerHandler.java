@@ -36,4 +36,6 @@ public interface SparkHistoryServerHandler {
      * @return Map<String, String>: the Executor settings.
      **/
     Long getLatestAppDuration();
+
+    void runHistoryServerClient();
 }

@@ -10,6 +10,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.*;
 
+import static org.jfree.util.Log.error;
+
 public class SparkHistoryServerHandlerImp implements SparkHistoryServerHandler {
     public String getLatestAppStagesJson() {
         return readFromFile("resources/stages.json");
@@ -52,7 +54,8 @@ public class SparkHistoryServerHandlerImp implements SparkHistoryServerHandler {
         }
         Long maxMemory = 0L;
         for (Executor executor : executors) {
-            maxMemory += executor.getMaxMemory();
+            if(!executor.getId().equalsIgnoreCase("driver"))
+                maxMemory += executor.getMaxMemory();
 
         }
         executorSettings.put("spark.executor.cores", String.valueOf(totalCores));
@@ -71,6 +74,24 @@ public class SparkHistoryServerHandlerImp implements SparkHistoryServerHandler {
             e.printStackTrace();
         }
         return applicationsList[0].getAttempts()[applicationsList[0].getAttempts().length-1].getDuration();
+    }
+
+    @Override
+    public void runHistoryServerClient() {
+        HistoryClient historyClient = new HistoryClient();
+        final String host = "localhost:18080";
+        final int limit = Integer.MAX_VALUE;
+        final String filter = null;
+        Calendar calendar = Calendar.getInstance();
+        Date to = calendar.getTime();
+        calendar.add(Calendar.DAY_OF_WEEK, -100);
+        Date from = calendar.getTime();
+        String outputPath = String.format("history_%s_%s_%s.csv", filter, from.getTime(), to.getTime());
+        try {
+            HistoryClient.process(host, limit, outputPath);
+        } catch (IOException e) {
+            HistoryClient.error("Failed to connect to History Server", e);
+        }
     }
 
     private String readFromFile(String filePath) {
