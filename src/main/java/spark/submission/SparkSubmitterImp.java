@@ -30,13 +30,14 @@ public class SparkSubmitterImp implements SparkSubmitter {
 
     private String createSparkSubmitCommand(SparkApplication sparkApplication, SparkRunInfo sparkRunInfo) {
         StringBuilder sparkSubmitCommand = new StringBuilder();
-        sparkSubmitCommand.append("spark-submit --name \"")
+        sparkSubmitCommand.append("sudo spark-submit --name \"")
                 .append(sparkApplication.getName())
                 .append("\" ")
                 .append("--class ")
                 .append(sparkApplication.getMainClassName())
                 .append(" --master ")
                 .append(sparkRunInfo.getSparkMaster())
+                .append("--deploy-mode cluster")
                 .append(" ");
         if (sparkRunInfo.getConfigsFilePath() != null && sparkRunInfo.getConfigsFilePath().length() != 0) {
             sparkSubmitCommand.append("--properties-file ").append(sparkRunInfo.getConfigsFilePath()).append(" ");

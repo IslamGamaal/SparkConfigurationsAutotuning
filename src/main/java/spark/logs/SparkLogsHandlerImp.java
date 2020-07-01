@@ -4,9 +4,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import spark.historyserver.model.Environment;
 import spark.historyserver.model.Executor;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.Scanner;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.fs.FSDataOutputStream;
+
 
 public class SparkLogsHandlerImp implements SparkLogsHandler {
     public String getLatestAppPhysicalPlan() {
@@ -18,18 +22,23 @@ public class SparkLogsHandlerImp implements SparkLogsHandler {
     }
 
     private String readFromFile(String filePath) {
+        filePath ="hdfs://172.31.3.0:8020"+"/" + filePath;
         StringBuilder fileContents = new StringBuilder();
+        FileSystem fs = null;
         try {
-            File myObj = new File(filePath);
-            Scanner myReader = new Scanner(myObj);
-            while (myReader.hasNextLine()) {
-                fileContents.append(myReader.nextLine()).append('\n');
+            fs = FileSystem.get(new Configuration());
+            assert fs != null;
+            BufferedReader bufferedReader = new BufferedReader(
+                    new InputStreamReader(fs.open(new Path(filePath))));
+            String line ;
+            while ((line = bufferedReader.readLine()) != null) {
+                fileContents.append(line).append('\n');
             }
-            myReader.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
+            bufferedReader.close();
+        } catch (IOException e) {
             e.printStackTrace();
         }
+
         return fileContents.toString();
     }
 }

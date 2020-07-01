@@ -1,4 +1,4 @@
-/mnt/01D43FA6387D16F0/GP-general/benchmarks/tpch-spark-app/target/my-app-1.0-SNAPSHOT.jar FALSE file:///mnt/01D43FA6387D16F0/tbchTest/parquet/ /mnt/01D43FA6387D16F0/GP-general/benchmarks/tpch-spark-app/queries-tpch-dbgen-mysql-master/ SPLIT /mnt/01D43FA6387D16F0/GP-general/SparkConfigurationsAutotuning/resources/
-/mnt/01D43FA6387D16F0/GP-general/tpcds-spark-app/target/1.0-1.0-SNAPSHOT.jar FALSE file:///mnt/01D43FA6387D16F0/GP-general/tpcds_dataset/parquet/ /mnt/01D43FA6387D16F0/GP-general/benchmarks/tpcds/TPCDS-Queries/ SPLIT /mnt/01D43FA6387D16F0/GP-general/SparkConfigurationsAutotuning/resources/
-/mnt/01D43FA6387D16F0/GP-general/benchmarks/pageRankSbt/target/scala-2.12/pageranksbt_2.12-0.1.jar file:///mnt/01D43FA6387D16F0/GP-general/benchmarks/pageRankSbt/com-youtube.all.cmty.txt
-/mnt/01D43FA6387D16F0/GP-general/benchmarks/connectedComponentsSbt/target/scala-2.12/connectedcomponentssbt_2.12-0.1.jar file:///mnt/01D43FA6387D16F0/GP-general/benchmarks/pageRankSbt/com-youtube.all.cmty.txt 5
+file:///mnt1/sparkauto/spark-becnhmarks/tpch-spark-app/target/my-app-1.0-SNAPSHOT.jar FALSE /appsdata/tpch/ hdfs:///appsdata/tpch/queries/ 1 /appsdata/resources/
+file:///mnt1/sparkauto/spark-becnhmarks/tpcds-spark-app/target/1.0-1.0-SNAPSHOT.jar FALSE /appsdata/tpcds/ hdfs:///appsdata/tpcds/queries/ SPLIT /appsdata/resources/
+file:///mnt1/sparkauto/spark-becnhmarks/pageRankSbt/target/scala-2.12/pageranksbt_2.12-0.1.jar file:///mnt/01D43FA6387D16F0/GP-general/benchmarks/pageRankSbt/com-youtube.all.cmty.txt
+file:///mnt1/sparkauto/spark-becnhmarks/connectedComponentsSbt/target/scala-2.12/connectedcomponentssbt_2.12-0.1.jar file:///mnt/01D43FA6387D16F0/GP-general/benchmarks/pageRankSbt/com-youtube.all.cmty.txt 5

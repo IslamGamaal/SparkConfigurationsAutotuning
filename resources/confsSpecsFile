@@ -5,5 +5,5 @@ confunit - g g m - - - k m - s - -
 isboolean f f f f f f f f f f f t t
 isint t t t t False False t t t t t t t
 sparkhistory spark.eventLog.enabled true spark.eventLog.dir file:///home/akrammoussa/Downloads/incorta/spark/logs spark.history.fs.logDirectory file:///home/akrammoussa/Downloads/incorta/spark/logs spark.local.dir file:///mnt/01D43FA6387D16F0/spark-temp
-sparkdirectory /home/akrammoussa/Downloads/incorta/spark/spark-2.4.3-bin-hadoop2.7
-sparkMaster spark://AkramMoussa:7077
+sparkdirectory /usr/lib/spark
+sparkMaster yarn
