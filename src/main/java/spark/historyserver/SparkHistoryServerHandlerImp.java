@@ -10,8 +10,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.*;
 
-import static org.jfree.util.Log.error;
-
 public class SparkHistoryServerHandlerImp implements SparkHistoryServerHandler {
     public String getLatestAppStagesJson() {
         return readFromFile("resources/stages.json");

@@ -17,6 +17,18 @@
                     <target>8</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>MainTest</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
     <dependencies>
@@ -59,11 +71,21 @@
             <artifactId>hadoop-common</artifactId>
             <version>2.10.0</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/jfree/jcommon -->
         <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-common</artifactId>
-            <version>2.10.0</version>
+            <groupId>jfree</groupId>
+            <artifactId>jcommon</artifactId>
+            <version>1.0.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.moeaframework</groupId>
+            <artifactId>moeaframework</artifactId>
+            <version>2.12</version>
+        </dependency>
+        <!-- Thanks for using https://jar-download.com -->
+
+
 
     </dependencies>
+
 </project>

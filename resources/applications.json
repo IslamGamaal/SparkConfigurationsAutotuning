@@ -1,0 +1,736 @@
+[ {
+  "id" : "app-20200622223309-0019",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-22T20:33:08.529GMT",
+    "endTime" : "2020-06-22T20:33:49.780GMT",
+    "lastUpdated" : "2020-06-22T20:33:49.000GMT",
+    "duration" : 41251,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1592858029780,
+    "startTimeEpoch" : 1592857988529,
+    "lastUpdatedEpoch" : 1592858029000
+  } ]
+}, {
+  "id" : "app-20200622223155-0018",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-22T20:31:54.862GMT",
+    "endTime" : "2020-06-22T20:32:45.400GMT",
+    "lastUpdated" : "2020-06-22T20:32:45.000GMT",
+    "duration" : 50538,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1592857965400,
+    "startTimeEpoch" : 1592857914862,
+    "lastUpdatedEpoch" : 1592857965000
+  } ]
+}, {
+  "id" : "app-20200622222734-0017",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-22T20:27:33.188GMT",
+    "endTime" : "2020-06-22T20:28:22.137GMT",
+    "lastUpdated" : "2020-06-22T20:28:22.000GMT",
+    "duration" : 48949,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1592857702137,
+    "startTimeEpoch" : 1592857653188,
+    "lastUpdatedEpoch" : 1592857702000
+  } ]
+}, {
+  "id" : "app-20200622222624-0016",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-22T20:26:23.309GMT",
+    "endTime" : "2020-06-22T20:27:14.684GMT",
+    "lastUpdated" : "2020-06-22T20:27:14.000GMT",
+    "duration" : 51375,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1592857634684,
+    "startTimeEpoch" : 1592857583309,
+    "lastUpdatedEpoch" : 1592857634000
+  } ]
+}, {
+  "id" : "app-20200622221659-0015",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-22T20:16:58.473GMT",
+    "endTime" : "2020-06-22T20:17:55.016GMT",
+    "lastUpdated" : "2020-06-22T20:17:55.000GMT",
+    "duration" : 56543,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1592857075016,
+    "startTimeEpoch" : 1592857018473,
+    "lastUpdatedEpoch" : 1592857075000
+  } ]
+}, {
+  "id" : "app-20200622221536-0014",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-22T20:15:35.380GMT",
+    "endTime" : "2020-06-22T20:16:19.575GMT",
+    "lastUpdated" : "2020-06-22T20:16:19.000GMT",
+    "duration" : 44195,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1592856979575,
+    "startTimeEpoch" : 1592856935380,
+    "lastUpdatedEpoch" : 1592856979000
+  } ]
+}, {
+  "id" : "app-20200622221135-0013",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-22T20:11:33.464GMT",
+    "endTime" : "2020-06-22T20:12:19.571GMT",
+    "lastUpdated" : "2020-06-22T20:12:19.000GMT",
+    "duration" : 46107,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1592856739571,
+    "startTimeEpoch" : 1592856693464,
+    "lastUpdatedEpoch" : 1592856739000
+  } ]
+}, {
+  "id" : "app-20200622221027-0012",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-22T20:10:25.168GMT",
+    "endTime" : "2020-06-22T20:11:20.589GMT",
+    "lastUpdated" : "2020-06-22T20:11:20.000GMT",
+    "duration" : 55421,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1592856680589,
+    "startTimeEpoch" : 1592856625168,
+    "lastUpdatedEpoch" : 1592856680000
+  } ]
+}, {
+  "id" : "app-20200622214340-0011",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-22T19:43:38.847GMT",
+    "endTime" : "2020-06-22T19:45:34.885GMT",
+    "lastUpdated" : "2020-06-22T19:45:35.000GMT",
+    "duration" : 116038,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1592855134885,
+    "startTimeEpoch" : 1592855018847,
+    "lastUpdatedEpoch" : 1592855135000
+  } ]
+}, {
+  "id" : "app-20200622214016-0010",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-22T19:40:15.035GMT",
+    "endTime" : "2020-06-22T19:41:17.877GMT",
+    "lastUpdated" : "2020-06-22T19:41:17.000GMT",
+    "duration" : 62842,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1592854877877,
+    "startTimeEpoch" : 1592854815035,
+    "lastUpdatedEpoch" : 1592854877000
+  } ]
+}, {
+  "id" : "app-20200622213228-0009",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-22T19:32:26.677GMT",
+    "endTime" : "2020-06-22T19:33:46.323GMT",
+    "lastUpdated" : "2020-06-22T19:33:46.000GMT",
+    "duration" : 79646,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1592854426323,
+    "startTimeEpoch" : 1592854346677,
+    "lastUpdatedEpoch" : 1592854426000
+  } ]
+}, {
+  "id" : "app-20200622175132-0008",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-22T15:51:31.402GMT",
+    "endTime" : "2020-06-22T15:52:20.831GMT",
+    "lastUpdated" : "2020-06-22T15:52:20.000GMT",
+    "duration" : 49429,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1592841140831,
+    "startTimeEpoch" : 1592841091402,
+    "lastUpdatedEpoch" : 1592841140000
+  } ]
+}, {
+  "id" : "app-20200622174914-0007",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-22T15:49:12.788GMT",
+    "endTime" : "2020-06-22T15:50:00.736GMT",
+    "lastUpdated" : "2020-06-22T15:50:00.000GMT",
+    "duration" : 47948,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1592841000736,
+    "startTimeEpoch" : 1592840952788,
+    "lastUpdatedEpoch" : 1592841000000
+  } ]
+}, {
+  "id" : "app-20200622165557-0006",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-22T14:55:56.356GMT",
+    "endTime" : "2020-06-22T14:56:40.919GMT",
+    "lastUpdated" : "2020-06-22T14:56:40.000GMT",
+    "duration" : 44563,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1592837800919,
+    "startTimeEpoch" : 1592837756356,
+    "lastUpdatedEpoch" : 1592837800000
+  } ]
+}, {
+  "id" : "app-20200622165455-0005",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-22T14:54:54.999GMT",
+    "endTime" : "2020-06-22T14:55:42.404GMT",
+    "lastUpdated" : "2020-06-22T14:55:42.000GMT",
+    "duration" : 47405,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1592837742404,
+    "startTimeEpoch" : 1592837694999,
+    "lastUpdatedEpoch" : 1592837742000
+  } ]
+}, {
+  "id" : "app-20200622163323-0004",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-22T14:33:22.726GMT",
+    "endTime" : "2020-06-22T14:34:10.912GMT",
+    "lastUpdated" : "2020-06-22T14:34:10.000GMT",
+    "duration" : 48186,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1592836450912,
+    "startTimeEpoch" : 1592836402726,
+    "lastUpdatedEpoch" : 1592836450000
+  } ]
+}, {
+  "id" : "app-20200622160518-0003",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-22T14:05:17.653GMT",
+    "endTime" : "2020-06-22T14:06:09.213GMT",
+    "lastUpdated" : "2020-06-22T14:06:09.000GMT",
+    "duration" : 51560,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1592834769213,
+    "startTimeEpoch" : 1592834717653,
+    "lastUpdatedEpoch" : 1592834769000
+  } ]
+}, {
+  "id" : "app-20200622160418-0002",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-22T14:04:16.463GMT",
+    "endTime" : "2020-06-22T14:05:05.229GMT",
+    "lastUpdated" : "2020-06-22T14:05:05.000GMT",
+    "duration" : 48766,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1592834705229,
+    "startTimeEpoch" : 1592834656463,
+    "lastUpdatedEpoch" : 1592834705000
+  } ]
+}, {
+  "id" : "app-20200622155732-0001",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-22T13:57:31.884GMT",
+    "endTime" : "2020-06-22T13:58:09.525GMT",
+    "lastUpdated" : "2020-06-22T13:58:09.000GMT",
+    "duration" : 37641,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1592834289525,
+    "startTimeEpoch" : 1592834251884,
+    "lastUpdatedEpoch" : 1592834289000
+  } ]
+}, {
+  "id" : "app-20200622155615-0000",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-22T13:56:13.863GMT",
+    "endTime" : "2020-06-22T13:57:18.967GMT",
+    "lastUpdated" : "2020-06-22T13:57:19.000GMT",
+    "duration" : 65104,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1592834238967,
+    "startTimeEpoch" : 1592834173863,
+    "lastUpdatedEpoch" : 1592834239000
+  } ]
+}, {
+  "id" : "app-20200612234107-0034",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-12T21:41:06.853GMT",
+    "endTime" : "2020-06-12T21:42:00.089GMT",
+    "lastUpdated" : "2020-06-12T21:42:00.000GMT",
+    "duration" : 53236,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1591998120089,
+    "startTimeEpoch" : 1591998066853,
+    "lastUpdatedEpoch" : 1591998120000
+  } ]
+}, {
+  "id" : "app-20200612233931-0033",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-12T21:39:30.776GMT",
+    "endTime" : "2020-06-12T21:40:09.371GMT",
+    "lastUpdated" : "2020-06-12T21:40:09.000GMT",
+    "duration" : 38595,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1591998009371,
+    "startTimeEpoch" : 1591997970776,
+    "lastUpdatedEpoch" : 1591998009000
+  } ]
+}, {
+  "id" : "app-20200612233811-0032",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-12T21:38:10.697GMT",
+    "endTime" : "2020-06-12T21:38:53.662GMT",
+    "lastUpdated" : "2020-06-12T21:38:53.000GMT",
+    "duration" : 42965,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1591997933662,
+    "startTimeEpoch" : 1591997890697,
+    "lastUpdatedEpoch" : 1591997933000
+  } ]
+}, {
+  "id" : "app-20200612233649-0031",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-12T21:36:48.412GMT",
+    "endTime" : "2020-06-12T21:37:36.020GMT",
+    "lastUpdated" : "2020-06-12T21:37:36.000GMT",
+    "duration" : 47608,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1591997856020,
+    "startTimeEpoch" : 1591997808412,
+    "lastUpdatedEpoch" : 1591997856000
+  } ]
+}, {
+  "id" : "app-20200612233428-0030",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-12T21:34:27.469GMT",
+    "endTime" : "2020-06-12T21:35:08.471GMT",
+    "lastUpdated" : "2020-06-12T21:35:08.000GMT",
+    "duration" : 41002,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1591997708471,
+    "startTimeEpoch" : 1591997667469,
+    "lastUpdatedEpoch" : 1591997708000
+  } ]
+}, {
+  "id" : "app-20200612233232-0029",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-12T21:32:31.329GMT",
+    "endTime" : "2020-06-12T21:33:11.662GMT",
+    "lastUpdated" : "2020-06-12T21:33:11.000GMT",
+    "duration" : 40333,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1591997591662,
+    "startTimeEpoch" : 1591997551329,
+    "lastUpdatedEpoch" : 1591997591000
+  } ]
+}, {
+  "id" : "app-20200612232843-0028",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-12T21:28:42.301GMT",
+    "endTime" : "2020-06-12T21:29:22.019GMT",
+    "lastUpdated" : "2020-06-12T21:29:22.000GMT",
+    "duration" : 39718,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1591997362019,
+    "startTimeEpoch" : 1591997322301,
+    "lastUpdatedEpoch" : 1591997362000
+  } ]
+}, {
+  "id" : "app-20200612232029-0024",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-12T21:20:28.746GMT",
+    "endTime" : "2020-06-12T21:21:16.161GMT",
+    "lastUpdated" : "2020-06-12T21:21:16.000GMT",
+    "duration" : 47415,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1591996876161,
+    "startTimeEpoch" : 1591996828746,
+    "lastUpdatedEpoch" : 1591996876000
+  } ]
+}, {
+  "id" : "app-20200612231652-0022",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-12T21:16:51.436GMT",
+    "endTime" : "2020-06-12T21:17:39.388GMT",
+    "lastUpdated" : "2020-06-12T21:17:39.000GMT",
+    "duration" : 47952,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1591996659388,
+    "startTimeEpoch" : 1591996611436,
+    "lastUpdatedEpoch" : 1591996659000
+  } ]
+}, {
+  "id" : "app-20200612231350-0020",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-12T21:13:49.948GMT",
+    "endTime" : "2020-06-12T21:14:37.543GMT",
+    "lastUpdated" : "2020-06-12T21:14:37.000GMT",
+    "duration" : 47595,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1591996477543,
+    "startTimeEpoch" : 1591996429948,
+    "lastUpdatedEpoch" : 1591996477000
+  } ]
+}, {
+  "id" : "app-20200612230902-0018",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-12T21:09:01.328GMT",
+    "endTime" : "2020-06-12T21:09:50.644GMT",
+    "lastUpdated" : "2020-06-12T21:09:50.000GMT",
+    "duration" : 49316,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1591996190644,
+    "startTimeEpoch" : 1591996141328,
+    "lastUpdatedEpoch" : 1591996190000
+  } ]
+}, {
+  "id" : "app-20200612230330-0017",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-12T21:03:29.307GMT",
+    "endTime" : "2020-06-12T21:04:18.605GMT",
+    "lastUpdated" : "2020-06-12T21:04:18.000GMT",
+    "duration" : 49298,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1591995858605,
+    "startTimeEpoch" : 1591995809307,
+    "lastUpdatedEpoch" : 1591995858000
+  } ]
+}, {
+  "id" : "app-20200612230109-0016",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-12T21:01:08.367GMT",
+    "endTime" : "2020-06-12T21:01:56.374GMT",
+    "lastUpdated" : "2020-06-12T21:01:56.000GMT",
+    "duration" : 48007,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1591995716374,
+    "startTimeEpoch" : 1591995668367,
+    "lastUpdatedEpoch" : 1591995716000
+  } ]
+}, {
+  "id" : "app-20200612225724-0015",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-12T20:57:22.439GMT",
+    "endTime" : "2020-06-12T20:58:11.387GMT",
+    "lastUpdated" : "2020-06-12T20:58:11.000GMT",
+    "duration" : 48948,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1591995491387,
+    "startTimeEpoch" : 1591995442439,
+    "lastUpdatedEpoch" : 1591995491000
+  } ]
+}, {
+  "id" : "app-20200612225423-0014",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-12T20:54:21.401GMT",
+    "endTime" : "2020-06-12T20:55:28.277GMT",
+    "lastUpdated" : "2020-06-12T20:55:28.000GMT",
+    "duration" : 66876,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1591995328277,
+    "startTimeEpoch" : 1591995261401,
+    "lastUpdatedEpoch" : 1591995328000
+  } ]
+}, {
+  "id" : "app-20200612225132-0013",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-12T20:51:30.232GMT",
+    "endTime" : "2020-06-12T20:52:36.764GMT",
+    "lastUpdated" : "2020-06-12T20:52:36.000GMT",
+    "duration" : 66532,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1591995156764,
+    "startTimeEpoch" : 1591995090232,
+    "lastUpdatedEpoch" : 1591995156000
+  } ]
+}, {
+  "id" : "app-20200612224549-0012",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-12T20:45:48.468GMT",
+    "endTime" : "2020-06-12T20:46:54.916GMT",
+    "lastUpdated" : "2020-06-12T20:46:55.000GMT",
+    "duration" : 66448,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1591994814916,
+    "startTimeEpoch" : 1591994748468,
+    "lastUpdatedEpoch" : 1591994815000
+  } ]
+}, {
+  "id" : "app-20200612223834-0011",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-12T20:38:33.266GMT",
+    "endTime" : "2020-06-12T20:39:23.725GMT",
+    "lastUpdated" : "2020-06-12T20:39:23.000GMT",
+    "duration" : 50459,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1591994363725,
+    "startTimeEpoch" : 1591994313266,
+    "lastUpdatedEpoch" : 1591994363000
+  } ]
+}, {
+  "id" : "app-20200612223539-0010",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-12T20:35:38.878GMT",
+    "endTime" : "2020-06-12T20:36:31.321GMT",
+    "lastUpdated" : "2020-06-12T20:36:31.000GMT",
+    "duration" : 52443,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1591994191321,
+    "startTimeEpoch" : 1591994138878,
+    "lastUpdatedEpoch" : 1591994191000
+  } ]
+}, {
+  "id" : "app-20200612222434-0009",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-12T20:24:33.219GMT",
+    "endTime" : "2020-06-12T20:25:22.370GMT",
+    "lastUpdated" : "2020-06-12T20:25:22.000GMT",
+    "duration" : 49151,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1591993522370,
+    "startTimeEpoch" : 1591993473219,
+    "lastUpdatedEpoch" : 1591993522000
+  } ]
+}, {
+  "id" : "app-20200612221730-0008",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-12T20:17:29.579GMT",
+    "endTime" : "2020-06-12T20:18:20.124GMT",
+    "lastUpdated" : "2020-06-12T20:18:20.000GMT",
+    "duration" : 50545,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1591993100124,
+    "startTimeEpoch" : 1591993049579,
+    "lastUpdatedEpoch" : 1591993100000
+  } ]
+}, {
+  "id" : "app-20200612221055-0007",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-12T20:10:53.832GMT",
+    "endTime" : "2020-06-12T20:11:48.112GMT",
+    "lastUpdated" : "2020-06-12T20:11:48.000GMT",
+    "duration" : 54280,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1591992708112,
+    "startTimeEpoch" : 1591992653832,
+    "lastUpdatedEpoch" : 1591992708000
+  } ]
+}, {
+  "id" : "app-20200612175647-0006",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-12T15:56:45.931GMT",
+    "endTime" : "2020-06-12T15:57:43.840GMT",
+    "lastUpdated" : "2020-06-12T15:57:43.000GMT",
+    "duration" : 57909,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1591977463840,
+    "startTimeEpoch" : 1591977405931,
+    "lastUpdatedEpoch" : 1591977463000
+  } ]
+}, {
+  "id" : "app-20200612160709-0005",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-12T14:07:07.818GMT",
+    "endTime" : "2020-06-12T14:08:03.030GMT",
+    "lastUpdated" : "2020-06-12T14:08:03.000GMT",
+    "duration" : 55212,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1591970883030,
+    "startTimeEpoch" : 1591970827818,
+    "lastUpdatedEpoch" : 1591970883000
+  } ]
+}, {
+  "id" : "app-20200612160241-0004",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-12T14:02:39.353GMT",
+    "endTime" : "2020-06-12T14:03:32.821GMT",
+    "lastUpdated" : "2020-06-12T14:03:32.000GMT",
+    "duration" : 53468,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1591970612821,
+    "startTimeEpoch" : 1591970559353,
+    "lastUpdatedEpoch" : 1591970612000
+  } ]
+}, {
+  "id" : "app-20200612160104-0003",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-12T14:01:02.488GMT",
+    "endTime" : "2020-06-12T14:01:49.506GMT",
+    "lastUpdated" : "2020-06-12T14:01:49.000GMT",
+    "duration" : 47018,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1591970509506,
+    "startTimeEpoch" : 1591970462488,
+    "lastUpdatedEpoch" : 1591970509000
+  } ]
+}, {
+  "id" : "app-20200612155626-0002",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-12T13:56:23.774GMT",
+    "endTime" : "2020-06-12T13:57:09.231GMT",
+    "lastUpdated" : "2020-06-12T13:57:09.000GMT",
+    "duration" : 45457,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1591970229231,
+    "startTimeEpoch" : 1591970183774,
+    "lastUpdatedEpoch" : 1591970229000
+  } ]
+}, {
+  "id" : "app-20200612155351-0001",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-12T13:53:49.511GMT",
+    "endTime" : "2020-06-12T13:54:43.539GMT",
+    "lastUpdated" : "2020-06-12T13:54:43.000GMT",
+    "duration" : 54028,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1591970083539,
+    "startTimeEpoch" : 1591970029511,
+    "lastUpdatedEpoch" : 1591970083000
+  } ]
+}, {
+  "id" : "app-20200612154751-0000",
+  "name" : "tpch",
+  "attempts" : [ {
+    "startTime" : "2020-06-12T13:47:49.493GMT",
+    "endTime" : "2020-06-12T13:49:01.493GMT",
+    "lastUpdated" : "2020-06-12T13:49:01.000GMT",
+    "duration" : 72000,
+    "sparkUser" : "akrammoussa",
+    "completed" : true,
+    "appSparkVersion" : "2.4.3",
+    "endTimeEpoch" : 1591969741493,
+    "startTimeEpoch" : 1591969669493,
+    "lastUpdatedEpoch" : 1591969741000
+  } ]
+} ]
