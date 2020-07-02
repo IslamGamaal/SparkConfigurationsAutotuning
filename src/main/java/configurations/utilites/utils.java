@@ -69,7 +69,7 @@ public class utils {
         }
     }
     public static void loadSpecs(Map<String, Object> confsSpecs) {
-        System.out.println(System.getProperty("user.dir")+ "/resources/confsSpecsFile");
+        //System.out.println(System.getProperty("user.dir")+ "/resources/confsSpecsFile");
         File file = new File(System.getProperty("user.dir")+ "/resources/confsSpecsFile");
 
         BufferedReader br = null;

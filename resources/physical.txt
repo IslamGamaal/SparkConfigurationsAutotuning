@@ -1,0 +1,45 @@
+TakeOrderedAndProject(limit=100, orderBy=[c_customer_id#203 ASC NULLS FIRST], output=[c_customer_id#203])
++- *(12) Project [c_customer_id#203]
+   +- *(12) BroadcastHashJoin [ctr_customer_sk#851], [c_customer_sk#202], Inner, BuildRight
+      :- *(12) Project [ctr_customer_sk#851]
+      :  +- *(12) BroadcastHashJoin [ctr_store_sk#852], [s_store_sk#462], Inner, BuildRight
+      :     :- *(12) Project [ctr_customer_sk#851, ctr_store_sk#852]
+      :     :  +- *(12) SortMergeJoin [ctr_store_sk#852], [ctr_store_sk#852#871], Inner, (ctr_total_return#853 > (avg(ctr_total_return) * CAST(1.2 AS DOUBLE))#856)
+      :     :     :- *(4) Sort [ctr_store_sk#852 ASC NULLS FIRST], false, 0
+      :     :     :  +- Exchange hashpartitioning(ctr_store_sk#852, 16)
+      :     :     :     +- *(3) Filter isnotnull(ctr_total_return#853)
+      :     :     :        +- *(3) HashAggregate(keys=[sr_customer_sk#523, sr_store_sk#527], functions=[sum(sr_return_amt#531)], output=[ctr_customer_sk#851, ctr_store_sk#852, ctr_total_return#853])
+      :     :     :           +- Exchange hashpartitioning(sr_customer_sk#523, sr_store_sk#527, 16)
+      :     :     :              +- *(2) HashAggregate(keys=[sr_customer_sk#523, sr_store_sk#527], functions=[partial_sum(sr_return_amt#531)], output=[sr_customer_sk#523, sr_store_sk#527, sum#863])
+      :     :     :                 +- *(2) Project [sr_customer_sk#523, sr_store_sk#527, sr_return_amt#531]
+      :     :     :                    +- *(2) BroadcastHashJoin [sr_returned_date_sk#520], [d_date_sk#282], Inner, BuildRight
+      :     :     :                       :- *(2) Project [sr_returned_date_sk#520, sr_customer_sk#523, sr_store_sk#527, sr_return_amt#531]
+      :     :     :                       :  +- *(2) Filter ((isnotnull(sr_returned_date_sk#520) && isnotnull(sr_store_sk#527)) && isnotnull(sr_customer_sk#523))
+      :     :     :                       :     +- *(2) FileScan parquet [sr_returned_date_sk#520,sr_customer_sk#523,sr_store_sk#527,sr_return_amt#531] Batched: true, Format: Parquet, Location: InMemoryFileIndex[file:/mnt/01D43FA6387D16F0/GP-general/tpcds_dataset/parquet/store_returns], PartitionFilters: [], PushedFilters: [IsNotNull(sr_returned_date_sk), IsNotNull(sr_store_sk), IsNotNull(sr_customer_sk)], ReadSchema: struct<sr_returned_date_sk:int,sr_customer_sk:int,sr_store_sk:int,sr_return_amt:double>
+      :     :     :                       +- BroadcastExchange HashedRelationBroadcastMode(List(cast(input[0, int, true] as bigint)))
+      :     :     :                          +- *(1) Project [d_date_sk#282]
+      :     :     :                             +- *(1) Filter ((isnotnull(d_year#288) && (d_year#288 = 2001)) && isnotnull(d_date_sk#282))
+      :     :     :                                +- *(1) FileScan parquet [d_date_sk#282,d_year#288] Batched: true, Format: Parquet, Location: InMemoryFileIndex[file:/mnt/01D43FA6387D16F0/GP-general/tpcds_dataset/parquet/date_dim], PartitionFilters: [], PushedFilters: [IsNotNull(d_year), EqualTo(d_year,2001), IsNotNull(d_date_sk)], ReadSchema: struct<d_date_sk:int,d_year:int>
+      :     :     +- *(9) Sort [ctr_store_sk#852#871 ASC NULLS FIRST], false, 0
+      :     :        +- Exchange hashpartitioning(ctr_store_sk#852#871, 16)
+      :     :           +- *(8) Filter isnotnull((avg(ctr_total_return) * CAST(1.2 AS DOUBLE))#856)
+      :     :              +- *(8) HashAggregate(keys=[ctr_store_sk#852], functions=[avg(ctr_total_return#853)], output=[(avg(ctr_total_return) * CAST(1.2 AS DOUBLE))#856, ctr_store_sk#852#871])
+      :     :                 +- Exchange hashpartitioning(ctr_store_sk#852, 16)
+      :     :                    +- *(7) HashAggregate(keys=[ctr_store_sk#852], functions=[partial_avg(ctr_total_return#853)], output=[ctr_store_sk#852, sum#866, count#867L])
+      :     :                       +- *(7) HashAggregate(keys=[sr_customer_sk#523, sr_store_sk#527], functions=[sum(sr_return_amt#531)], output=[ctr_store_sk#852, ctr_total_return#853])
+      :     :                          +- Exchange hashpartitioning(sr_customer_sk#523, sr_store_sk#527, 16)
+      :     :                             +- *(6) HashAggregate(keys=[sr_customer_sk#523, sr_store_sk#527], functions=[partial_sum(sr_return_amt#531)], output=[sr_customer_sk#523, sr_store_sk#527, sum#863])
+      :     :                                +- *(6) Project [sr_customer_sk#523, sr_store_sk#527, sr_return_amt#531]
+      :     :                                   +- *(6) BroadcastHashJoin [sr_returned_date_sk#520], [d_date_sk#282], Inner, BuildRight
+      :     :                                      :- *(6) Project [sr_returned_date_sk#520, sr_customer_sk#523, sr_store_sk#527, sr_return_amt#531]
+      :     :                                      :  +- *(6) Filter (isnotnull(sr_returned_date_sk#520) && isnotnull(sr_store_sk#527))
+      :     :                                      :     +- *(6) FileScan parquet [sr_returned_date_sk#520,sr_customer_sk#523,sr_store_sk#527,sr_return_amt#531] Batched: true, Format: Parquet, Location: InMemoryFileIndex[file:/mnt/01D43FA6387D16F0/GP-general/tpcds_dataset/parquet/store_returns], PartitionFilters: [], PushedFilters: [IsNotNull(sr_returned_date_sk), IsNotNull(sr_store_sk)], ReadSchema: struct<sr_returned_date_sk:int,sr_customer_sk:int,sr_store_sk:int,sr_return_amt:double>
+      :     :                                      +- ReusedExchange [d_date_sk#282], BroadcastExchange HashedRelationBroadcastMode(List(cast(input[0, int, true] as bigint)))
+      :     +- BroadcastExchange HashedRelationBroadcastMode(List(cast(input[0, int, true] as bigint)))
+      :        +- *(10) Project [s_store_sk#462]
+      :           +- *(10) Filter ((isnotnull(s_state#486) && (s_state#486 = TN)) && isnotnull(s_store_sk#462))
+      :              +- *(10) FileScan parquet [s_store_sk#462,s_state#486] Batched: true, Format: Parquet, Location: InMemoryFileIndex[file:/mnt/01D43FA6387D16F0/GP-general/tpcds_dataset/parquet/store], PartitionFilters: [], PushedFilters: [IsNotNull(s_state), EqualTo(s_state,TN), IsNotNull(s_store_sk)], ReadSchema: struct<s_store_sk:int,s_state:string>
+      +- BroadcastExchange HashedRelationBroadcastMode(List(cast(input[0, int, true] as bigint)))
+         +- *(11) Project [c_customer_sk#202, c_customer_id#203]
+            +- *(11) Filter isnotnull(c_customer_sk#202)
+               +- *(11) FileScan parquet [c_customer_sk#202,c_customer_id#203] Batched: true, Format: Parquet, Location: InMemoryFileIndex[file:/mnt/01D43FA6387D16F0/GP-general/tpcds_dataset/parquet/customer], PartitionFilters: [], PushedFilters: [IsNotNull(c_customer_sk)], ReadSchema: struct<c_customer_sk:int,c_customer_id:string>
